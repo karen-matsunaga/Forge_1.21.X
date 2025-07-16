@@ -21,5 +21,23 @@
   "tooltip.mccoursemod.chisel.shift_down": "This Item changes certain Blocks",
   "tooltip.mccoursemod.chisel": "Press §eShift§r for more Information!",
 
-  "tooltip.mccoursemod.kohlrabi": "This tastes GREAT!"
+  "tooltip.mccoursemod.kohlrabi": "This tastes GREAT!",
+
+  "effect.mccoursemod.slimey": "Slimey",
+  "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
+  "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
+  "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.slimey_potion": "Arrow of Slimey",
+
+  "effect.mccoursemod.fly": "Fly",
+  "item.minecraft.potion.effect.fly_potion": "Fly Potion",
+  "item.minecraft.splash_potion.effect.fly_potion": "Fly Splash Potion",
+  "item.minecraft.lingering_potion.effect.fly_potion": "Fly Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.fly_potion": "Arrow of Fly",
+
+  "effect.mccoursemod.nothing": "Nothing",
+  "item.minecraft.potion.effect.nothing_potion": "Nothing Potion",
+  "item.minecraft.splash_potion.effect.nothing_potion": "Nothing Splash Potion",
+  "item.minecraft.lingering_potion.effect.nothing_potion": "Nothing Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.nothing_potion": "Arrow of Nothing"
 }
