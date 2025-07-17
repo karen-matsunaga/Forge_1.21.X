@@ -1,14 +1,16 @@
-//package net.karen.mccoursemod.item;
-//
-//import net.minecraft.client.renderer.item.ItemProperties;
-//import net.minecraft.resources.ResourceLocation;
+package net.karen.mccoursemod.item;
+
+import net.karen.mccoursemod.MccourseMod;
+import net.karen.mccoursemod.component.ModDataComponentTypes;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 //import net.minecraft.world.entity.player.Player;
 //import net.minecraft.world.item.FishingRodItem;
 //import net.minecraft.world.item.Item;
-//
-//public class ModItemProperties {
-//    // Registry all Item Properties
-//    public static void addCustomItemProperties() {
+
+public class ModItemProperties {
+    // Registry all Item Properties
+    public static void addCustomItemProperties() {
         // Custom ALTERNATE item (TRUE -> Texture 1 | FALSE -> Texture 2) -> NUMBER values
 //        makeAlternateItem(ModItems.MCCOURSE_BOTTLE.get()); // Mccourse Bottle item
 //
@@ -27,7 +29,13 @@
 
 //        // CUSTOM ELYTRA - Diamond Elytra
 //        makeElytra(ModItems.DIAMOND_ELYTRA.get());
-//    }
+
+
+        // Custom advanced item
+        ItemProperties.register(ModItems.CHISEL.get(), ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "used"),
+                               (itemStack, clientLevel, livingEntity, i) ->
+                                itemStack.get(ModDataComponentTypes.COORDINATES.get()) != null ? 1f : 0f);
+    }
 
     // CUSTOM METHOD - Alexandrite shield (CUSTOM SHIELD)
 //    private static void makeShield(Item item) {
@@ -86,4 +94,4 @@
 //        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "broken"),
 //                (stack, level, entity, i) -> ElytraItem.isFlyEnabled(stack) ? 0.0F : 1.0F);
 //    }
-//}
+}

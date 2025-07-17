@@ -40,7 +40,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_ALEXANDRITE.get());
 
         // Custom advanced item
-        basicItem(ModItems.CHISEL.get());
+        alternateItem(ModItems.CHISEL);
 
         // Custom food
         basicItem(ModItems.KOHLRABI.get());
@@ -156,6 +156,27 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    // CUSTOM METHOD - Custom advanced item
+    private void alternateItem(RegistryObject<? extends Item> item) {
+        String itemName = item.getId().getPath();
+        // Example: Chisel -> chisel.json
+        withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated"))
+                // Layer
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "item/" + itemName))
+                // Override
+                .override().predicate(ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "used"), 1.0f)
+                // Model
+                .model(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,
+                                                                                        "item/" + itemName + "_used"))).end();
+
+        // Example: Chisel used -> chisel_used.json
+        getBuilder(itemName + "_used").parent(new ModelFile.UncheckedModelFile("item/generated"))
+                                           .texture("layer0",
+                                                    ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,
+                                                                                          "item/" + itemName + "_used"));
     }
 
     // CUSTOM METHOD - Custom Fishing Rod item model
