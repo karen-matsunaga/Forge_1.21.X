@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-16T10:28:55.9728886	Block States: mccoursemod
+// 1.21.1	2025-07-17T11:12:28.2177345	Block States: mccoursemod
 f7a9ed05e4c0a1202e8bcf365202ba7cb2be62ac assets/mccoursemod/blockstates/alexandrite_block.json
 291e000454687c4991c3e826145a1d360567203c assets/mccoursemod/blockstates/alexandrite_deepslate_ore.json
 1bb0b595678e6e93d97e1b3a1b9045b16fc8f481 assets/mccoursemod/blockstates/alexandrite_ore.json
@@ -11,6 +11,11 @@ f1dfc420f5927b06ec4e8a2d85b6229d337baa78 assets/mccoursemod/blockstates/magic_bl
 bba4ded4abed3fa49e5409154b21b7f13ec127c5 assets/mccoursemod/models/block/raw_alexandrite_block.json
 fefa132720eda74a4724a2b3507da81a24d39445 assets/mccoursemod/models/item/alexandrite_block.json
 904d0b15dba58790da8cd454d891a2320f793519 assets/mccoursemod/models/item/alexandrite_deepslate_ore.json
+8ea68674b1c1dd967d944e231a01e9cb33794244 assets/mccoursemod/models/item/alexandrite_fence_gate.json
 7d40877b9b93e103021515229d7934c5bce956a4 assets/mccoursemod/models/item/alexandrite_ore.json
+0c952b22a5563a08e940506d2515a392bc9f896e assets/mccoursemod/models/item/alexandrite_pressure_plate.json
+6e32590331ce75c6922b77a87c3244cbd79aff4b assets/mccoursemod/models/item/alexandrite_slab.json
+db664caae0cb1ba469812550726b45659f050f5b assets/mccoursemod/models/item/alexandrite_stairs.json
+061c5070eacca88f9b1c519ed0f2089a78d70a7a assets/mccoursemod/models/item/alexandrite_trapdoor.json
 71fe9e076ccc1d975fcf0a546427965633200cc7 assets/mccoursemod/models/item/magic_block.json
 878e4be2eeae91d7500344fbbe0d44895aa6502f assets/mccoursemod/models/item/raw_alexandrite_block.json

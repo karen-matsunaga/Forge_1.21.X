@@ -1,4 +1,7 @@
-// 1.21.1	2025-07-16T10:28:55.9718885	Tags for minecraft:block mod id mccoursemod
+// 1.21.1	2025-07-17T11:12:28.2177345	Tags for minecraft:block mod id mccoursemod
+c672faf25f7f7b929d83713bd501abd9832a7895 data/minecraft/tags/block/fences.json
+4383ce647178f5c26650baa519591f45b5dafddd data/minecraft/tags/block/fence_gates.json
 41d7c772125a61c384ebc5464dbf852ff60cd886 data/minecraft/tags/block/mineable/pickaxe.json
 e696e5ede42fd55eba2f4f62a8ca6c34966ad3bd data/minecraft/tags/block/needs_diamond_tool.json
 d64daf346c47358dd390b6ae74043460ca0dfd45 data/minecraft/tags/block/needs_iron_tool.json
+9f16787e039dadb23a9139c0eaa24e9faafe3a50 data/minecraft/tags/block/walls.json

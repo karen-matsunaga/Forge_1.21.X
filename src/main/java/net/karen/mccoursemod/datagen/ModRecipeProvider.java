@@ -23,6 +23,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         List<ItemLike> ALEXANDRITE_SMELTABLES = List.of(ModItems.RAW_ALEXANDRITE.get(),
                 ModBlocks.ALEXANDRITE_ORE.get(), ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
 
+        // Custom block
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALEXANDRITE_BLOCK.get())
                 .pattern("AAA")
                 .pattern("AAA")
@@ -31,19 +32,66 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get())).save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 9)
-                .requires(ModBlocks.ALEXANDRITE_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.ALEXANDRITE_BLOCK.get()), has(ModBlocks.ALEXANDRITE_BLOCK.get())).save(output);
+                              .requires(ModBlocks.ALEXANDRITE_BLOCK.get())
+                              .unlockedBy(getHasName(ModBlocks.ALEXANDRITE_BLOCK.get()),
+                                          has(ModBlocks.ALEXANDRITE_BLOCK.get())).save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 32)
-                .requires(ModBlocks.MAGIC_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.ALEXANDRITE_BLOCK.get()), has(ModBlocks.ALEXANDRITE_BLOCK.get()))
-                .save(output, MccourseMod.MOD_ID + ":alexandrite_from_magic_block");
+                              .requires(ModBlocks.MAGIC_BLOCK.get())
+                              .unlockedBy(getHasName(ModBlocks.ALEXANDRITE_BLOCK.get()), has(ModBlocks.ALEXANDRITE_BLOCK.get()))
+                              .save(output, MccourseMod.MOD_ID + ":alexandrite_from_magic_block");
 
+        // Custom ore
         oreSmelting(output, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
                 0.25f, 200, "alexandrite");
+
         oreBlasting(output, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
                 0.25f, 100, "alexandrite");
 
+        // Custom stair
+        stairBuilder(ModBlocks.ALEXANDRITE_STAIRS.get(),
+                     Ingredient.of(ModItems.ALEXANDRITE.get())).group("alexandrite")
+                               .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get()))
+                               .save(output);
+
+        // Custom slab
+        slab(output, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ALEXANDRITE_SLAB.get(), ModItems.ALEXANDRITE.get());
+
+        // Custom button
+        buttonBuilder(ModBlocks.ALEXANDRITE_BUTTON.get(),
+                      Ingredient.of(ModItems.ALEXANDRITE.get())).group("alexandrite")
+                                .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get()))
+                                .save(output);
+
+        // Custom pressure plate
+        pressurePlate(output, ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get(), ModItems.ALEXANDRITE.get());
+
+        // Custom fence
+        fenceBuilder(ModBlocks.ALEXANDRITE_FENCE.get(),
+                     Ingredient.of(ModItems.ALEXANDRITE.get())).group("alexandrite")
+                               .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get()))
+                               .save(output);
+
+        // Custom fence gate
+        fenceGateBuilder(ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
+                         Ingredient.of(ModItems.ALEXANDRITE.get())).group("alexandrite")
+                                   .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get()))
+                                   .save(output);
+
+        // Custom wall
+        wall(output, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ALEXANDRITE_WALL.get(), ModItems.ALEXANDRITE.get());
+
+        // Custom door
+        doorBuilder(ModBlocks.ALEXANDRITE_DOOR.get(),
+                    Ingredient.of(ModItems.ALEXANDRITE.get())).group("alexandrite")
+                              .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get()))
+                              .save(output);
+
+        // Custom trapdoor
+        trapdoorBuilder(ModBlocks.ALEXANDRITE_TRAPDOOR.get(),
+                        Ingredient.of(ModItems.ALEXANDRITE.get())).group("alexandrite")
+                                  .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get()))
+                                  .save(output);
     }
 
     protected static void oreSmelting(@NotNull RecipeOutput recipeOutput, List<ItemLike> itemLike,

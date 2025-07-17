@@ -13,6 +13,19 @@
 
   "block.mccoursemod.magic_block": "Magic Block",
 
+  "block.mccoursemod.alexandrite_stairs": "Alexandrite Stairs",
+  "block.mccoursemod.alexandrite_slab": "Alexandrite Slab",
+
+  "block.mccoursemod.alexandrite_button": "Alexandrite Button",
+  "block.mccoursemod.alexandrite_pressure_plate": "Alexandrite Pressure Plate",
+
+  "block.mccoursemod.alexandrite_fence": "Alexandrite Fence",
+  "block.mccoursemod.alexandrite_fence_gate": "Alexandrite Fence Gate",
+  "block.mccoursemod.alexandrite_wall": "Alexandrite Wall",
+
+  "block.mccoursemod.alexandrite_door": "Alexandrite Door",
+  "block.mccoursemod.alexandrite_trapdoor": "Alexandrite Trapdoor",
+
   "creativetab.mccoursemod.alexandrite_items": "Alexandrite Items",
   "creativetab.mccoursemod.alexandrite_blocks": "Alexandrite Blocks",
 

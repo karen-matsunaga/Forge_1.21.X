@@ -26,5 +26,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                                             .add(ModBlocks.MAGIC_BLOCK.get());
         tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+
+        // Fences
+        tag(BlockTags.FENCES).add(ModBlocks.ALEXANDRITE_FENCE.get());
+
+        // Fence gates
+        tag(BlockTags.FENCE_GATES).add(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
+
+        // Walls
+        tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
     }
 }
