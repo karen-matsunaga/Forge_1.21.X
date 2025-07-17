@@ -4,9 +4,9 @@ import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 //import net.minecraft.world.entity.player.Player;
 //import net.minecraft.world.item.FishingRodItem;
-//import net.minecraft.world.item.Item;
 
 public class ModItemProperties {
     // Registry all Item Properties
@@ -21,8 +21,7 @@ public class ModItemProperties {
 //        makeShield(ModItems.ALEXANDRITE_SHIELD.get()); // Alexandrite's shield
 //
 //        // Custom BOW
-//        makeBow(ModItems.ALEXANDRITE_BOW.get()); // Alexandrite's bow
-//        makeBow(ModItems.MINER_BOW.get()); // Miner's bow
+        makeBow(ModItems.KAUPEN_BOW.get()); // Kaupen's bow
 
         // Custom FISHING ROD
 //        makeFishingRod(ModItems.MCCOURSE_FISHING_ROD.get()); // Mccourse Fishing Rod
@@ -50,20 +49,22 @@ public class ModItemProperties {
 //    }
 
     // CUSTOM METHOD - Alexandrite's bow animation (CUSTOM BOW)
-//    private static void makeBow(Item item) {
-//        // Bow PULL animation
-//        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "pull"),
-//                (stack, level, entity, i) -> {
-//            if (entity == null) { return 0.0F; }
-//            else {
-//                int duration = stack.getUseDuration(), remain = entity.getUseItemRemainingTicks();
-//                return entity.getUseItem() != stack ? 0.0F : (float) (duration - remain) / 20.0F;
-//            }
-//        });
-//        // Bow PULLING animation
-//        ItemProperties.register(item, ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "pulling"),
-//                (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
-//    }
+    private static void makeBow(Item item) {
+        // Bow PULL animation
+        ItemProperties.register(item, ResourceLocation.withDefaultNamespace("pull"),
+            (stack, level, entity, i) -> {
+              if (entity == null) { return 0.0F; }
+              else {
+                  int duration = stack.getUseDuration(entity), useItem = entity.getUseItemRemainingTicks();
+                  return entity.getUseItem() != stack ? 0.0F : (float)(duration - useItem) / 20.0F;
+              }
+            });
+
+        // Bow PULLING animation
+        ItemProperties.register(item, ResourceLocation.withDefaultNamespace("pulling"),
+            (stack, level, entity, i) ->
+             entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
+    }
 
     // CUSTOM METHOD - Mccourse Fishing Rod (CUSTOM FISHING ROD)
 //    private static void makeFishingRod(Item item) {

@@ -50,6 +50,9 @@ public class ModCreativeModeTabs {
                         // Custom Smithing Template
                         output.accept(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
 
+                        // Custom Bow
+                        output.accept(ModItems.KAUPEN_BOW.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());

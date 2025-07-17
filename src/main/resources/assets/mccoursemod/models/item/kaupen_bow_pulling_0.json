@@ -1,0 +1,6 @@
+{
+    "parent": "mccoursemod:item/kaupen_bow",
+    "textures": {
+        "layer0": "mccoursemod:item/kaupen_bow_pulling_0"
+    }
+}

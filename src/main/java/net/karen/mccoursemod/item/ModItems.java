@@ -113,6 +113,10 @@ public class ModItems {
             ITEMS.register("kaupen_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(
                       ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "kaupen")));
 
+    // Custom Bow
+    public static final RegistryObject<Item> KAUPEN_BOW = ITEMS.register("kaupen_bow",
+            () -> new BowItem(new Item.Properties().durability(500)));
+
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
 //            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
