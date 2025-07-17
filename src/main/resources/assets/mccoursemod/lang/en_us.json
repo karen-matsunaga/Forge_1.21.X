@@ -76,6 +76,13 @@
   "item.minecraft.lingering_potion.effect.nothing_potion": "Nothing Lingering Potion",
   "item.minecraft.tipped_arrow.effect.nothing_potion": "Arrow of Nothing",
 
+  "painting.mccoursemod.world.title": "World",
+  "painting.mccoursemod.world.author": "NanoAttack",
+  "painting.mccoursemod.shrimp.title": "Shrimp",
+  "painting.mccoursemod.shrimp.author": "NanoAttack",
+  "painting.mccoursemod.saw_them.title": "Saw Them",
+  "painting.mccoursemod.saw_them.author": "NanoAttack",
+
   "trim_pattern.mccoursemod.kaupen": "Kaupen Armor Trim",
   "trim_material.mccoursemod.alexandrite": "Alexandrite Material"
 }
