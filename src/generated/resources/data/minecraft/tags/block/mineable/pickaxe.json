@@ -4,6 +4,16 @@
     "mccoursemod:raw_alexandrite_block",
     "mccoursemod:alexandrite_ore",
     "mccoursemod:alexandrite_deepslate_ore",
-    "mccoursemod:magic_block"
+    "mccoursemod:magic_block",
+    "mccoursemod:alexandrite_lamp",
+    "mccoursemod:alexandrite_button",
+    "mccoursemod:alexandrite_door",
+    "mccoursemod:alexandrite_fence",
+    "mccoursemod:alexandrite_fence_gate",
+    "mccoursemod:alexandrite_pressure_plate",
+    "mccoursemod:alexandrite_slab",
+    "mccoursemod:alexandrite_stairs",
+    "mccoursemod:alexandrite_trapdoor",
+    "mccoursemod:alexandrite_wall"
   ]
 }

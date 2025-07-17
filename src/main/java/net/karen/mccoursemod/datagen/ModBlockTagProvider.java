@@ -23,8 +23,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                                             .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
                                             .add(ModBlocks.ALEXANDRITE_ORE.get())
                                             .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())
-                                            .add(ModBlocks.MAGIC_BLOCK.get());
+                                            .add(ModBlocks.MAGIC_BLOCK.get(), ModBlocks.ALEXANDRITE_LAMP.get(),
+                                                 ModBlocks.ALEXANDRITE_BUTTON.get(), ModBlocks.ALEXANDRITE_DOOR.get(),
+                                                 ModBlocks.ALEXANDRITE_FENCE.get(), ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
+                                                 ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get(), ModBlocks.ALEXANDRITE_SLAB.get(),
+                                                 ModBlocks.ALEXANDRITE_STAIRS.get(), ModBlocks.ALEXANDRITE_TRAPDOOR.get(),
+                                                 ModBlocks.ALEXANDRITE_WALL.get());
+
+        // Break with Iron
         tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
+
+        // Break with Diamond
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
 
         // Fences

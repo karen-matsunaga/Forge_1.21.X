@@ -2,9 +2,12 @@ package net.karen.mccoursemod.datagen;
 
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.ModBlocks;
+import net.karen.mccoursemod.block.custom.AlexandriteLampBlock;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -64,6 +67,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.ALEXANDRITE_FENCE_GATE);
         // Custom trapdoor
         blockItem(ModBlocks.ALEXANDRITE_TRAPDOOR, "_bottom");
+        // Custom lamp
+        customLamp();
     }
 
     // CUSTOM METHOD - Block with Cube format
@@ -81,5 +86,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void blockItem(RegistryObject<? extends Block> blockRegistryObject, String appendix) {
         simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile("mccoursemod:block/" +
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + appendix));
+    }
+
+    // CUSTOM METHOD - Custom Lamp block
+    private void customLamp() {
+        getVariantBuilder(ModBlocks.ALEXANDRITE_LAMP.get()).forAllStates(state -> {
+            if (state.getValue(AlexandriteLampBlock.CLICKED)) {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_on",
+                        ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + "alexandrite_lamp_on")))};
+            }
+            else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_off",
+                        ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + "alexandrite_lamp_off")))};
+            }
+        });
+        simpleBlockItem(ModBlocks.ALEXANDRITE_LAMP.get(), models().cubeAll("alexandrite_lamp_on",
+                ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + "alexandrite_lamp_on")));
     }
 }

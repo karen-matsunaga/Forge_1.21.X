@@ -45,6 +45,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ALEXANDRITE_WALL.get());
         dropSelf(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
         this.add(ModBlocks.ALEXANDRITE_DOOR.get(), block -> createDoorTable(ModBlocks.ALEXANDRITE_DOOR.get()));
+        dropSelf(ModBlocks.ALEXANDRITE_LAMP.get());
     }
 
     // CUSTOM METHOD - Custom ore loot table
