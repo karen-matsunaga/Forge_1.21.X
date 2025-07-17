@@ -4,6 +4,7 @@ import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.item.custom.ChiselItem;
 import net.karen.mccoursemod.item.custom.FuelItem;
 //import net.karen.mccoursemod.item.custom.MccourseFishingRodItem;
+import net.karen.mccoursemod.item.custom.HammerItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -73,6 +74,11 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.ALEXANDRITE,
                   new Item.Properties().attributes(
                                 HoeItem.createAttributes(ModToolTiers.ALEXANDRITE, 0, -3.0f))));
+
+    // CUSTOM Hammer
+    public static final RegistryObject<Item> ALEXANDRITE_HAMMER = ITEMS.register("alexandrite_hammer",
+            () -> new HammerItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ALEXANDRITE, 7, -3.5f))));
 
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",

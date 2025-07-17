@@ -3,10 +3,12 @@ package net.karen.mccoursemod.event;
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
+import net.karen.mccoursemod.item.custom.HammerItem;
 import net.karen.mccoursemod.potion.ModPotions;
 import net.karen.mccoursemod.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -38,28 +40,27 @@ public class ModEvents {
 
     // Done with the help of https://github.com/CoFH/CoFHCore/blob/1.19.x/src/main/java/cofh/core/event/AreaEffectEvents.java
     // Don't be a jerk License
-//    @SubscribeEvent
-//    public static void onHammerUsage(BlockEvent.BreakEvent event) {
-//        Player player = event.getPlayer();
-//        ItemStack mainHandItem = player.getMainHandItem();
-//
-//        if(mainHandItem.getItem() instanceof HammerItem hammer && player instanceof ServerPlayer serverPlayer) {
-//            BlockPos initialBlockPos = event.getPos();
-//            if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
-//                return;
-//            }
-//
-//            for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
-//                if(pos == initialBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
-//                    continue;
-//                }
-//
-//                HARVESTED_BLOCKS.add(pos);
-//                serverPlayer.gameMode.destroyBlock(pos);
-//                HARVESTED_BLOCKS.remove(pos);
-//            }
-//        }
-//    }
+    @SubscribeEvent
+    public static void onHammerUsage(BlockEvent.BreakEvent event) {
+        Player player = event.getPlayer();
+        ItemStack mainHandItem = player.getMainHandItem();
+        if(mainHandItem.getItem() instanceof HammerItem hammer && player instanceof ServerPlayer serverPlayer) {
+            BlockPos initialBlockPos = event.getPos();
+            if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
+                return;
+            }
+
+            for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
+                if(pos == initialBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
+                    continue;
+                }
+
+                HARVESTED_BLOCKS.add(pos);
+                serverPlayer.gameMode.destroyBlock(pos);
+                HARVESTED_BLOCKS.remove(pos);
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent event) {
@@ -80,7 +81,7 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION.getHolder().get());
         builder.addMix(Potions.AWKWARD, Items.EMERALD, ModPotions.FLY_POTION.getHolder().get());
         builder.addMix(ModPotions.FLY_POTION.getHolder().get(),
-                Blocks.EMERALD_BLOCK.asItem(), ModPotions.FLY_II_POTION.getHolder().get());
+                       Blocks.EMERALD_BLOCK.asItem(), ModPotions.FLY_II_POTION.getHolder().get());
         builder.addMix(Potions.AWKWARD, Items.CARROT, ModPotions.HASTE_POTION.getHolder().get());
         builder.addMix(Potions.AWKWARD, Items.GLOWSTONE, ModPotions.NOTHING_POTION.getHolder().get());
         builder.addMix(Potions.AWKWARD, Items.COOKED_BEEF, ModPotions.SATURATION_POTION.getHolder().get());
@@ -103,6 +104,7 @@ public class ModEvents {
         }
     }
 
+    // CUSTOM EVENT - Multiplier blocks custom effect with (DATA COMPONENT)
     @SubscribeEvent
     public static void multiplierTest(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();

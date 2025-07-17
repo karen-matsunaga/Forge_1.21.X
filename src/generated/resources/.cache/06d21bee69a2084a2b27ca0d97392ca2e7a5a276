@@ -1,9 +1,10 @@
-// 1.21.1	2025-07-17T13:18:04.9299465	Item Models: mccoursemod
+// 1.21.1	2025-07-17T13:45:04.3220209	Item Models: mccoursemod
 5af1bd1c0b012a9b1507dafdb35d5a969ed3c225 assets/mccoursemod/models/item/alexandrite.json
 2a1db29e420fbdbacf8bc3b889707825ec83bd16 assets/mccoursemod/models/item/alexandrite_axe.json
 3e38f4e0a6ec3c5ec20995647eac8a2dc2aa32df assets/mccoursemod/models/item/alexandrite_button.json
 f4d14ec9a363350ebed796af6dc231a51a1b34d1 assets/mccoursemod/models/item/alexandrite_door.json
 016fd653f3c09f604a8346e17bf731c8947cf482 assets/mccoursemod/models/item/alexandrite_fence.json
+357236f2cf09bd30b0e5776697ced9e303fa3c50 assets/mccoursemod/models/item/alexandrite_hammer.json
 aed86b9a5d4c1d3e5af419fa9e55fcb33d5b6e2d assets/mccoursemod/models/item/alexandrite_hoe.json
 154b5950542679b676655e45f6e242f6ed830356 assets/mccoursemod/models/item/alexandrite_pickaxe.json
 63815fe16929eaffa64239a1dff3d60990b10a57 assets/mccoursemod/models/item/alexandrite_shovel.json
