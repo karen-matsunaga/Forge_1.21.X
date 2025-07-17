@@ -14,6 +14,11 @@
 
   "item.mccoursemod.alexandrite_hammer": "Alexandrite Hammer",
 
+  "item.mccoursemod.alexandrite_helmet": "Alexandrite Helmet",
+  "item.mccoursemod.alexandrite_chestplate": "Alexandrite Chestplate",
+  "item.mccoursemod.alexandrite_leggings": "Alexandrite Leggings",
+  "item.mccoursemod.alexandrite_boots": "Alexandrite Boots",
+
   "block.mccoursemod.alexandrite_block": "Block of Alexandrite",
   "block.mccoursemod.raw_alexandrite_block": "Block of Raw Alexandrite",
   "block.mccoursemod.alexandrite_ore": "Alexandrite Ore",
