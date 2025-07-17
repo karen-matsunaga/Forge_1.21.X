@@ -20,6 +20,7 @@
   "item.mccoursemod.alexandrite_boots": "Alexandrite Boots",
 
   "item.mccoursemod.alexandrite_horse_armor": "Alexandrite Horse Armor",
+  "item.mccoursemod.kaupen_armor_trim_smithing_template": "Kaupen Trim Template",
 
   "block.mccoursemod.alexandrite_block": "Block of Alexandrite",
   "block.mccoursemod.raw_alexandrite_block": "Block of Raw Alexandrite",
@@ -69,5 +70,8 @@
   "item.minecraft.potion.effect.nothing_potion": "Nothing Potion",
   "item.minecraft.splash_potion.effect.nothing_potion": "Nothing Splash Potion",
   "item.minecraft.lingering_potion.effect.nothing_potion": "Nothing Lingering Potion",
-  "item.minecraft.tipped_arrow.effect.nothing_potion": "Arrow of Nothing"
+  "item.minecraft.tipped_arrow.effect.nothing_potion": "Arrow of Nothing",
+
+  "trim_pattern.mccoursemod.kaupen": "Kaupen Armor Trim",
+  "trim_material.mccoursemod.alexandrite": "Alexandrite Material"
 }

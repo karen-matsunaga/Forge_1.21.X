@@ -41,6 +41,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ALEXANDRITE_HAMMER.get());
                         output.accept(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
+                        // Custom armors
+                        output.accept(ModItems.ALEXANDRITE_HELMET.get());
+                        output.accept(ModItems.ALEXANDRITE_CHESTPLATE.get());
+                        output.accept(ModItems.ALEXANDRITE_LEGGINGS.get());
+                        output.accept(ModItems.ALEXANDRITE_BOOTS.get());
+
+                        // Custom Smithing Template
+                        output.accept(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());

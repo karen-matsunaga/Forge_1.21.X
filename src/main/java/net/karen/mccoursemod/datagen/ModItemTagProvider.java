@@ -24,17 +24,19 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         // Custom advanced item tag (Magic block)
-        tag(ModTags.Items.TRANSFORMABLE_ITEMS).add(ModItems.ALEXANDRITE.get())
-                                              .add(ModItems.RAW_ALEXANDRITE.get())
-                                              .add(Items.COAL)
-                                              .add(Items.STICK)
-                                              .add(Items.COMPASS);
+        tag(ModTags.Items.TRANSFORMABLE_ITEMS).add(ModItems.ALEXANDRITE.get()).add(ModItems.RAW_ALEXANDRITE.get())
+                                              .add(Items.COAL).add(Items.STICK).add(Items.COMPASS);
         // Custom trimmable armor item tag
-        tag(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.ALEXANDRITE_HELMET.get())
-                .add(ModItems.ALEXANDRITE_CHESTPLATE.get())
-                .add(ModItems.ALEXANDRITE_LEGGINGS.get())
-                .add(ModItems.ALEXANDRITE_BOOTS.get());
+        tag(ItemTags.TRIMMABLE_ARMOR).add(ModItems.ALEXANDRITE_HELMET.get())
+                                     .add(ModItems.ALEXANDRITE_CHESTPLATE.get())
+                                     .add(ModItems.ALEXANDRITE_LEGGINGS.get())
+                                     .add(ModItems.ALEXANDRITE_BOOTS.get());
+
+        // Custom trim materials item tag
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ALEXANDRITE.get());
+
+        // Custom trim templates item tag
+        tag(ItemTags.TRIM_TEMPLATES).add(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
 
         // Custom active Fly effect item tag
         tag(ModTags.Items.HELMET_FLY).add(Items.NETHERITE_HELMET);

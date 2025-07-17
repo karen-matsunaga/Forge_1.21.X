@@ -7,6 +7,7 @@ import net.karen.mccoursemod.item.custom.FuelItem;
 import net.karen.mccoursemod.item.custom.HammerItem;
 import net.karen.mccoursemod.item.custom.ModArmorItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -106,6 +107,11 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_HORSE_ARMOR = ITEMS.register("alexandrite_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN,
                            false, new Item.Properties().stacksTo(1)));
+
+    // Custom Smithing Template
+    public static final RegistryObject<Item> KAUPEN_SMITHING_TEMPLATE =
+            ITEMS.register("kaupen_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(
+                      ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "kaupen")));
 
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",

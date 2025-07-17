@@ -24,15 +24,29 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        // CUSTOM Loot Table
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+                              List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new,
+                                                                             LootContextParamSets.BLOCK)), lookupProvider));
+
+        // CUSTOM Recipe
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
 
+        // CUSTOM Item Block
         BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
-        generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+                                                                      generator.addProvider(event.includeServer(), blockTagsProvider);
 
+        // CUSTOM Item Tag
+        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider,
+                                                                            blockTagsProvider.contentsGetter(), existingFileHelper));
+
+        // CUSTOM Item Model
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+
+        // CUSTOM Block State
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+
+        // CUSTOM Trim
+        generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
     }
 }

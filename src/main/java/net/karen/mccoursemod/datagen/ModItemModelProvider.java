@@ -77,6 +77,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom horse armor
         basicItem(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
+        // Custom Smithing Template
+        basicItem(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
+
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }
