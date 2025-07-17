@@ -127,6 +127,9 @@ public class ModItems {
     public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register("kohlrabi_seeds",
             () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
 
+    public static final RegistryObject<Item> HONEY_BERRIES = ITEMS.register("honey_berries",
+            () -> new ItemNameBlockItem(ModBlocks.HONEY_BERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.HONEY_BERRY)));
+
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
 //            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));

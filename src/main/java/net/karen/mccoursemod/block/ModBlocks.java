@@ -2,6 +2,7 @@ package net.karen.mccoursemod.block;
 
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.custom.AlexandriteLampBlock;
+import net.karen.mccoursemod.block.custom.HoneyBerryBushBlock;
 import net.karen.mccoursemod.block.custom.KohlrabiCropBlock;
 import net.karen.mccoursemod.block.custom.MagicBlock;
 import net.karen.mccoursemod.item.ModItems;
@@ -103,6 +104,10 @@ public class ModBlocks {
     // CUSTOM crop block
     public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop",
             () -> new KohlrabiCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+
+    public static final RegistryObject<Block> HONEY_BERRY_BUSH = BLOCKS.register("honey_berry_bush",
+            () -> new HoneyBerryBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
+
 
     // CUSTOM METHOD - Registry all custom blocks
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

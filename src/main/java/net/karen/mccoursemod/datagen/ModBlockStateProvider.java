@@ -3,11 +3,13 @@ package net.karen.mccoursemod.datagen;
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.block.custom.AlexandriteLampBlock;
+import net.karen.mccoursemod.block.custom.HoneyBerryBushBlock;
 import net.karen.mccoursemod.block.custom.KohlrabiCropBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -15,7 +17,6 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -82,6 +83,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Custom block crop
         makeCrop(((CropBlock) ModBlocks.KOHLRABI_CROP.get()), "kohlrabi_crop_stage", "kohlrabi_crop_stage");
+
+        // Custom bush block crop
+        makeBush(((SweetBerryBushBlock) ModBlocks.HONEY_BERRY_BUSH.get()),
+                "honey_berry_bush_stage", "honey_berry_bush_stage");
     }
 
     // CUSTOM METHOD - Block with Cube format
@@ -124,11 +129,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     // CUSTOM COMPLEMENT METHOD - Custom block crop
-    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] states(BlockState state, CropBlock block,
+                                     String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((KohlrabiCropBlock) block).getAgeProperty()),
-                ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + textureName +
-                           state.getValue(((KohlrabiCropBlock) block).getAgeProperty()))).renderType("cutout"));
+                    ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + textureName +
+                                                          state.getValue(((KohlrabiCropBlock) block).getAgeProperty())))
+                                                               .renderType("cutout"));
+        return models;
+    }
+
+    // CUSTOM METHOD - Custom bush block crop
+    public void makeBush(SweetBerryBushBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    // CUSTOM COMPLEMENT METHOD - Custom bush block crop
+    private ConfiguredModel[] states(BlockState state,
+                                     String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + state.getValue(HoneyBerryBushBlock.AGE),
+                        ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + textureName +
+                                                              state.getValue(HoneyBerryBushBlock.AGE))).renderType("cutout"));
+
         return models;
     }
 }

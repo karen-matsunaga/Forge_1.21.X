@@ -6,6 +6,7 @@
   "item.mccoursemod.kohlrabi": "Kohlrabi",
   "item.mccoursemod.aurora_ashes": "Aurora Ashes",
   "item.mccoursemod.kohlrabi_seeds": "Kohlrabi Seeds",
+  "item.mccoursemod.honey_berries": "Honey Berries",
 
   "item.mccoursemod.alexandrite_sword": "Alexandrite Sword",
   "item.mccoursemod.alexandrite_pickaxe": "Alexandrite Pickaxe",
@@ -49,6 +50,7 @@
 
   "block.mccoursemod.alexandrite_lamp": "Alexandrite Lamp",
   "block.mccoursemod.kohlrabi_crop": "Kohlrabi Crop",
+  "block.mccoursemod.honey_berry_bush": "Honey Berry Bush",
 
   "creativetab.mccoursemod.alexandrite_items": "Alexandrite Items",
   "creativetab.mccoursemod.alexandrite_blocks": "Alexandrite Blocks",

@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-17T19:20:48.2005275	Item Models: mccoursemod
+// 1.21.1	2025-07-17T20:47:04.8078745	Item Models: mccoursemod
 5af1bd1c0b012a9b1507dafdb35d5a969ed3c225 assets/mccoursemod/models/item/alexandrite.json
 2a1db29e420fbdbacf8bc3b889707825ec83bd16 assets/mccoursemod/models/item/alexandrite_axe.json
 78a09b25d6099cf19b6cf3efca9bb79ac2c48159 assets/mccoursemod/models/item/alexandrite_boots.json
@@ -59,6 +59,7 @@ c454caff9763e77eaeac8e02413f4c4a1d77c108 assets/mccoursemod/models/item/alexandr
 98c07c10f3185541ad211d209953f1fbdf169704 assets/mccoursemod/models/item/bar_brawl_music_disc.json
 b4f5b6bb6ca3808e858383cbdb7032ea03f760c2 assets/mccoursemod/models/item/chisel.json
 8f1e5531b8694e0358bfd9a168c2352c5aa67dbb assets/mccoursemod/models/item/chisel_used.json
+f3e6da1420dbe62596e8d92e76eeabceab101c58 assets/mccoursemod/models/item/honey_berries.json
 458c1d3aa02b68b4ffb2276f7c1b48f50eaf4d62 assets/mccoursemod/models/item/kaupen_armor_trim_smithing_template.json
 6558cd9343420d604e2353ca3749ce57ebc3e7b5 assets/mccoursemod/models/item/kohlrabi.json
 2587a8226dc2f3d342ca24ba253c2a3c450d9f9d assets/mccoursemod/models/item/kohlrabi_seeds.json

@@ -86,6 +86,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom seed crop
         basicItem(ModItems.KOHLRABI_SEEDS.get());
 
+        // Custom bush seed crop
+        basicItem(ModItems.HONEY_BERRIES.get());
+
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }
