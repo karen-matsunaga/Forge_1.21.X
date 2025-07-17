@@ -26,7 +26,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.AURORA_ASHES.get());
-
+                        // Custom Mccourse Fishing Rod
+                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> ALEXANDRITE_BLOCKS_TAB =
@@ -42,7 +43,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
 
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
-
                     }).build());
 
 

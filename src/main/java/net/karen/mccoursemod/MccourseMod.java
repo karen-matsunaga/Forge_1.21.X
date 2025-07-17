@@ -1,8 +1,12 @@
 package net.karen.mccoursemod;
 
 import net.karen.mccoursemod.block.ModBlocks;
+import net.karen.mccoursemod.component.ModDataComponentTypes;
+import net.karen.mccoursemod.effect.ModEffects;
 import net.karen.mccoursemod.item.ModCreativeModeTabs;
+import net.karen.mccoursemod.item.ModItemProperties;
 import net.karen.mccoursemod.item.ModItems;
+import net.karen.mccoursemod.potion.ModPotions;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,6 +41,10 @@ public class MccourseMod {
         ModCreativeModeTabs.register(modEventBus); // Registry all creative mode tabs
         ModItems.register(modEventBus); // Registry all custom items
         ModBlocks.register(modEventBus); // Registry all custom blocks
+        ModPotions.register(modEventBus); // Registry all custom potions
+        ModEffects.register(modEventBus); // Registry all custom effects
+        ModDataComponentTypes.register(modEventBus); // Registry all custom data components
+        ModItemProperties.addCustomItemProperties(); // Registry all custom item properties
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
