@@ -28,5 +28,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                                               .add(Items.COAL)
                                               .add(Items.STICK)
                                               .add(Items.COMPASS);
+
+        // Active Fly effect tag
+        tag(ModTags.Items.HELMET_FLY).add(Items.NETHERITE_HELMET);
+        tag(ModTags.Items.CHESTPLATE_FLY).add(Items.NETHERITE_CHESTPLATE);
+        tag(ModTags.Items.LEGGINGS_FLY).add(Items.NETHERITE_LEGGINGS);
+        tag(ModTags.Items.BOOTS_FLY).add(Items.NETHERITE_BOOTS);
     }
 }

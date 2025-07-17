@@ -18,6 +18,12 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
 
+        // Created Fly effect item tag
+        public static final TagKey<Item> HELMET_FLY = createTag("helmet_fly");
+        public static final TagKey<Item> CHESTPLATE_FLY = createTag("chestplate_fly");
+        public static final TagKey<Item> LEGGINGS_FLY = createTag("leggings_fly");
+        public static final TagKey<Item> BOOTS_FLY = createTag("boots_fly");
+
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, name));
         }
