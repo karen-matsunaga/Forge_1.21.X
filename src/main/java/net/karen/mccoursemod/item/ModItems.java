@@ -3,7 +3,7 @@ package net.karen.mccoursemod.item;
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.item.custom.ChiselItem;
 import net.karen.mccoursemod.item.custom.FuelItem;
-import net.karen.mccoursemod.item.custom.MccourseFishingRodItem;
+//import net.karen.mccoursemod.item.custom.MccourseFishingRodItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -40,8 +40,8 @@ public class ModItems {
             () -> new FuelItem(new Item.Properties(), 1200));
 
     // Custom fishing rod
-    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
-            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
+//    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
+//            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
 
     // CUSTOM METHOD - Registry all custom items
     public static RegistryObject<Item> item(String name, Supplier<Item> supplier) {
