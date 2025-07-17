@@ -9,12 +9,21 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
+    // Registry all custom block tags
     public static class Blocks {
+        // Created tool tags
+        public static final TagKey<Block> NEEDS_ALEXANDRITE_TOOL =
+                createTag("needs_alexandrite_tool");
+
+        public static final TagKey<Block> INCORRECT_FOR_ALEXANDRITE_TOOL =
+                createTag("incorrect_for_alexandrite_tool");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, name));
         }
     }
 
+    // Registry all custom item tags
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
 

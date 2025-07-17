@@ -1,8 +1,13 @@
-// 1.21.1	2025-07-17T11:12:28.2177345	Item Models: mccoursemod
+// 1.21.1	2025-07-17T13:18:04.9299465	Item Models: mccoursemod
 5af1bd1c0b012a9b1507dafdb35d5a969ed3c225 assets/mccoursemod/models/item/alexandrite.json
+2a1db29e420fbdbacf8bc3b889707825ec83bd16 assets/mccoursemod/models/item/alexandrite_axe.json
 3e38f4e0a6ec3c5ec20995647eac8a2dc2aa32df assets/mccoursemod/models/item/alexandrite_button.json
 f4d14ec9a363350ebed796af6dc231a51a1b34d1 assets/mccoursemod/models/item/alexandrite_door.json
 016fd653f3c09f604a8346e17bf731c8947cf482 assets/mccoursemod/models/item/alexandrite_fence.json
+aed86b9a5d4c1d3e5af419fa9e55fcb33d5b6e2d assets/mccoursemod/models/item/alexandrite_hoe.json
+154b5950542679b676655e45f6e242f6ed830356 assets/mccoursemod/models/item/alexandrite_pickaxe.json
+63815fe16929eaffa64239a1dff3d60990b10a57 assets/mccoursemod/models/item/alexandrite_shovel.json
+8d2f3048ed4d0e022a47cba962c17041ce414dbe assets/mccoursemod/models/item/alexandrite_sword.json
 112835b15639ee8c2c4ffe41c8a2a9a9424a68bb assets/mccoursemod/models/item/alexandrite_wall.json
 2ed5c132cf9554e8a466a1d6627f7015983fc1b6 assets/mccoursemod/models/item/aurora_ashes.json
 0667590b478aa28ad039666e24244c92e2b3a485 assets/mccoursemod/models/item/chisel.json

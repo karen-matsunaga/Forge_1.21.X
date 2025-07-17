@@ -2,9 +2,11 @@ package net.karen.mccoursemod.datagen;
 
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.ModBlocks;
+import net.karen.mccoursemod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -44,5 +46,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         // Walls
         tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
+
+        // Alexandrite tool tier
+        tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL)
+                .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
+                .add(Blocks.OBSIDIAN)
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        // Alexandrite incorrect tool tier
+        tag(ModTags.Blocks.INCORRECT_FOR_ALEXANDRITE_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL);
     }
 }

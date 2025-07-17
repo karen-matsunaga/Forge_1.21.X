@@ -1,4 +1,6 @@
-// 1.21.1	2025-07-17T12:47:00.7115474	Tags for minecraft:block mod id mccoursemod
+// 1.21.1	2025-07-17T13:18:04.9299465	Tags for minecraft:block mod id mccoursemod
+a21e44bfc07c30bef3fff38306eb53cb0e5b9bd9 data/mccoursemod/tags/block/incorrect_for_alexandrite_tool.json
+6d11e1baa7162b58ace50d9b82ddd3c7fd336f88 data/mccoursemod/tags/block/needs_alexandrite_tool.json
 c672faf25f7f7b929d83713bd501abd9832a7895 data/minecraft/tags/block/fences.json
 4383ce647178f5c26650baa519591f45b5dafddd data/minecraft/tags/block/fence_gates.json
 6e570a798c2fe21b5ab021cc09272fe1e7e21f43 data/minecraft/tags/block/mineable/pickaxe.json
