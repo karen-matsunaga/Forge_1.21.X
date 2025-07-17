@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ALEXANDRITE_AXE.get());
                         output.accept(ModItems.ALEXANDRITE_HOE.get());
                         output.accept(ModItems.ALEXANDRITE_HAMMER.get());
+                        output.accept(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());

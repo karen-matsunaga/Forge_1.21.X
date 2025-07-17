@@ -102,6 +102,11 @@ public class ModItems {
             () -> new ModArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                   new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(18))));
 
+    // CUSTOM Horse Armor
+    public static final RegistryObject<Item> ALEXANDRITE_HORSE_ARMOR = ITEMS.register("alexandrite_horse_armor",
+            () -> new AnimalArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN,
+                           false, new Item.Properties().stacksTo(1)));
+
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
 //            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
