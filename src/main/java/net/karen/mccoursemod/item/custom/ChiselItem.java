@@ -1,6 +1,7 @@
 package net.karen.mccoursemod.item.custom;
 
 import net.karen.mccoursemod.block.ModBlocks;
+import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -41,6 +42,7 @@ public class ChiselItem extends Item {
                             }
                         });
                 level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+                context.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), context.getClickedPos());
             }
         }
         return InteractionResult.SUCCESS;
@@ -51,6 +53,9 @@ public class ChiselItem extends Item {
                                 @NotNull List<Component> list, @NotNull TooltipFlag flag) {
         if (Screen.hasShiftDown()) { list.add(Component.translatable("tooltip.mccoursemod.chisel.shift_down")); }
         else { list.add(Component.translatable("tooltip.mccoursemod.chisel")); }
+        if (stack.get(ModDataComponentTypes.COORDINATES.get()) != null) {
+            list.add(Component.literal("Last block changed at " + stack.get(ModDataComponentTypes.COORDINATES.get())));
+        }
         super.appendHoverText(stack, context, list, flag);
     }
 }
