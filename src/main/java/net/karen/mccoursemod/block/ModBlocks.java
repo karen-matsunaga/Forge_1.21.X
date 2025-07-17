@@ -4,6 +4,7 @@ import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.custom.AlexandriteLampBlock;
 import net.karen.mccoursemod.block.custom.MagicBlock;
 import net.karen.mccoursemod.item.ModItems;
+import net.karen.mccoursemod.sound.ModSounds;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -31,6 +32,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().strength(3f)
                                                           .requiresCorrectToolForDrops()));
 
+    // Custom ore
     public static final RegistryObject<Block> ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
             () -> new DropExperienceBlock(UniformInt.of(2, 4),
                                           BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
@@ -41,8 +43,11 @@ public class ModBlocks {
                                                                         .requiresCorrectToolForDrops()
                                                                         .sound(SoundType.DEEPSLATE)));
 
+    // Custom advanced block
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
-            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(2f).noLootTable()));
+            () -> new MagicBlock(BlockBehaviour.Properties.of().strength(2f)
+                                                               .noLootTable()
+                                                               .sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     // CUSTOM stairs
     public static final RegistryObject<StairBlock> ALEXANDRITE_STAIRS = registerBlock("alexandrite_stairs",

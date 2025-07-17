@@ -2,11 +2,11 @@ package net.karen.mccoursemod.item.custom;
 
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
+import net.karen.mccoursemod.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -41,7 +41,7 @@ public class ChiselItem extends Item {
                                 context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND);
                             }
                         });
-                level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+                level.playSound(null, context.getClickedPos(), ModSounds.CHISEL_USE.get(), SoundSource.BLOCKS);
                 context.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), context.getClickedPos());
             }
         }
