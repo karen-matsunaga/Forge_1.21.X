@@ -5,6 +5,7 @@ import net.karen.mccoursemod.MccourseMod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,7 +21,7 @@ public class ModDataComponentTypes {
 
     // Multiplier custom tag
     public static final RegistryObject<DataComponentType<Integer>> MULTIPLIER = register("multiplier",
-            integerBuilder -> integerBuilder.persistent(Codec.INT));
+            integerBuilder -> integerBuilder.persistent(Codec.INT).networkSynchronized(ByteBufCodecs.INT));
 
     private static <T>RegistryObject<DataComponentType<T>> register(String name,
                                                                     UnaryOperator<DataComponentType.Builder<T>> builderOperator) {
