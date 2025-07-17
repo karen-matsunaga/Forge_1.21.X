@@ -3,15 +3,20 @@ package net.karen.mccoursemod.datagen;
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.block.custom.AlexandriteLampBlock;
+import net.karen.mccoursemod.block.custom.KohlrabiCropBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -59,16 +64,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Custom stairs
         blockItem(ModBlocks.ALEXANDRITE_STAIRS);
+
         // Custom slab
         blockItem(ModBlocks.ALEXANDRITE_SLAB);
+
         // Custom pressure plate
         blockItem(ModBlocks.ALEXANDRITE_PRESSURE_PLATE);
+
         // Custom fence gate
         blockItem(ModBlocks.ALEXANDRITE_FENCE_GATE);
+
         // Custom trapdoor
         blockItem(ModBlocks.ALEXANDRITE_TRAPDOOR, "_bottom");
+
         // Custom lamp
         customLamp();
+
+        // Custom block crop
+        makeCrop(((CropBlock) ModBlocks.KOHLRABI_CROP.get()), "kohlrabi_crop_stage", "kohlrabi_crop_stage");
     }
 
     // CUSTOM METHOD - Block with Cube format
@@ -102,5 +115,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         });
         simpleBlockItem(ModBlocks.ALEXANDRITE_LAMP.get(), models().cubeAll("alexandrite_lamp_on",
                 ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + "alexandrite_lamp_on")));
+    }
+
+    // CUSTOM METHOD - Custom block crop
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    // CUSTOM COMPLEMENT METHOD - Custom block crop
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((KohlrabiCropBlock) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "block/" + textureName +
+                           state.getValue(((KohlrabiCropBlock) block).getAgeProperty()))).renderType("cutout"));
+        return models;
     }
 }

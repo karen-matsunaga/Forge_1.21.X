@@ -83,6 +83,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom disc
         basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
+        // Custom seed crop
+        basicItem(ModItems.KOHLRABI_SEEDS.get());
+
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }

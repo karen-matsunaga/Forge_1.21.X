@@ -2,6 +2,7 @@ package net.karen.mccoursemod.block;
 
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.custom.AlexandriteLampBlock;
+import net.karen.mccoursemod.block.custom.KohlrabiCropBlock;
 import net.karen.mccoursemod.block.custom.MagicBlock;
 import net.karen.mccoursemod.item.ModItems;
 import net.karen.mccoursemod.sound.ModSounds;
@@ -98,6 +99,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
             () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
                     .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
+
+    // CUSTOM crop block
+    public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop",
+            () -> new KohlrabiCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
     // CUSTOM METHOD - Registry all custom blocks
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

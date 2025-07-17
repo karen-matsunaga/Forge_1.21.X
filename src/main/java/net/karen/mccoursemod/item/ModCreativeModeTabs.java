@@ -56,6 +56,9 @@ public class ModCreativeModeTabs {
                         // Custom disc
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
+                        // Custom crop
+                        output.accept(ModItems.KOHLRABI_SEEDS.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());
@@ -90,8 +93,11 @@ public class ModCreativeModeTabs {
 
                         // Custom lamp
                         output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
+
+                        // Custom crop block
+                        output.accept(ModBlocks.KOHLRABI_CROP.get());
                     }).build());
 
-
+    // CUSTOM METHOD - Registry all blocks and items on event
     public static void register(IEventBus eventBus) { CREATIVE_MODE_TABS.register(eventBus); }
 }

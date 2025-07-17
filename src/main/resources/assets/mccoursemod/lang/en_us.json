@@ -5,6 +5,7 @@
   "item.mccoursemod.chisel": "Chisel",
   "item.mccoursemod.kohlrabi": "Kohlrabi",
   "item.mccoursemod.aurora_ashes": "Aurora Ashes",
+  "item.mccoursemod.kohlrabi_seeds": "Kohlrabi Seeds",
 
   "item.mccoursemod.alexandrite_sword": "Alexandrite Sword",
   "item.mccoursemod.alexandrite_pickaxe": "Alexandrite Pickaxe",
@@ -47,6 +48,7 @@
   "block.mccoursemod.alexandrite_trapdoor": "Alexandrite Trapdoor",
 
   "block.mccoursemod.alexandrite_lamp": "Alexandrite Lamp",
+  "block.mccoursemod.kohlrabi_crop": "Kohlrabi Crop",
 
   "creativetab.mccoursemod.alexandrite_items": "Alexandrite Items",
   "creativetab.mccoursemod.alexandrite_blocks": "Alexandrite Blocks",
