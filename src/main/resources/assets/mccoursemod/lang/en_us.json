@@ -84,5 +84,7 @@
   "painting.mccoursemod.saw_them.author": "NanoAttack",
 
   "trim_pattern.mccoursemod.kaupen": "Kaupen Armor Trim",
-  "trim_material.mccoursemod.alexandrite": "Alexandrite Material"
+  "trim_material.mccoursemod.alexandrite": "Alexandrite Material",
+
+  "enchantment.mccoursemod.lightning_striker": "Lightning Striker"
 }

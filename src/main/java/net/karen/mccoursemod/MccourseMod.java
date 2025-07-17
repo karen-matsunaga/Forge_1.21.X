@@ -3,6 +3,7 @@ package net.karen.mccoursemod;
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
+import net.karen.mccoursemod.enchantment.ModEnchantmentEffects;
 import net.karen.mccoursemod.item.ModCreativeModeTabs;
 import net.karen.mccoursemod.item.ModItemProperties;
 import net.karen.mccoursemod.item.ModItems;
@@ -46,6 +47,7 @@ public class MccourseMod {
         ModEffects.register(modEventBus); // Registry all custom effects
         ModDataComponentTypes.register(modEventBus); // Registry all custom data components
         ModSounds.register(modEventBus); // Registry all custom sounds
+        ModEnchantmentEffects.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
