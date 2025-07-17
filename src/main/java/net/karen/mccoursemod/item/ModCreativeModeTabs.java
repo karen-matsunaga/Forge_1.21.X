@@ -53,6 +53,9 @@ public class ModCreativeModeTabs {
                         // Custom Bow
                         output.accept(ModItems.KAUPEN_BOW.get());
 
+                        // Custom disc
+                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());

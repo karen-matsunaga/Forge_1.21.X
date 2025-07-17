@@ -80,6 +80,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom Smithing Template
         basicItem(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
 
+        // Custom disc
+        basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }

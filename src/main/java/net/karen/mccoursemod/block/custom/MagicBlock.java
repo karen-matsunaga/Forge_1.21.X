@@ -32,7 +32,7 @@ public class MagicBlock extends Block {
 
     @Override
     public void stepOn(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
-        if(entity instanceof ItemEntity itemEntity) {
+        if (entity instanceof ItemEntity itemEntity) {
             if (isValidItem(itemEntity.getItem())) {
                itemEntity.setItem(new ItemStack(Items.DIAMOND, itemEntity.getItem().getCount()));
             }
@@ -40,7 +40,7 @@ public class MagicBlock extends Block {
                itemEntity.setItem(new ItemStack(Items.EMERALD, itemEntity.getItem().getCount()));
             }
         }
-        super.stepOn(level, pos, state, entity);
+//        super.stepOn(level, pos, state, entity);
     }
 
     private boolean isValidItem(ItemStack item) {

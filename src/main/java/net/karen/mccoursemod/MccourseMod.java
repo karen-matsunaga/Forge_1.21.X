@@ -7,6 +7,7 @@ import net.karen.mccoursemod.item.ModCreativeModeTabs;
 import net.karen.mccoursemod.item.ModItemProperties;
 import net.karen.mccoursemod.item.ModItems;
 import net.karen.mccoursemod.potion.ModPotions;
+import net.karen.mccoursemod.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,6 +45,7 @@ public class MccourseMod {
         ModPotions.register(modEventBus); // Registry all custom potions
         ModEffects.register(modEventBus); // Registry all custom effects
         ModDataComponentTypes.register(modEventBus); // Registry all custom data components
+        ModSounds.register(modEventBus); // Registry all custom sounds
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

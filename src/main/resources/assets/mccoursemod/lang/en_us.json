@@ -23,6 +23,9 @@
   "item.mccoursemod.kaupen_armor_trim_smithing_template": "Kaupen Trim Template",
   "item.mccoursemod.kaupen_bow": "Kaupen Bow",
 
+  "item.mccoursemod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.mccoursemod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
   "block.mccoursemod.alexandrite_block": "Block of Alexandrite",
   "block.mccoursemod.raw_alexandrite_block": "Block of Raw Alexandrite",
   "block.mccoursemod.alexandrite_ore": "Alexandrite Ore",

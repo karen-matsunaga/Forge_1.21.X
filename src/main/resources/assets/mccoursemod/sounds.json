@@ -34,5 +34,13 @@
     "sounds": [
       "mccoursemod:magic_block_fall"
     ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "mccoursemod:bar_brawl",
+        "stream": true
+      }
+    ]
   }
 }
