@@ -17,8 +17,11 @@ import net.karen.mccoursemod.loot.ModLootModifiers;
 import net.karen.mccoursemod.particle.AlexandriteParticles;
 import net.karen.mccoursemod.particle.ModParticles;
 import net.karen.mccoursemod.potion.ModPotions;
+import net.karen.mccoursemod.screen.ModMenuTypes;
+import net.karen.mccoursemod.screen.custom.PedestalScreen;
 import net.karen.mccoursemod.sound.ModSounds;
 import net.karen.mccoursemod.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -67,6 +70,7 @@ public class MccourseMod {
         ModParticles.register(modEventBus); // Registry all custom particles
         ModLootModifiers.register(modEventBus); // Registry all custom loot table modifiers
         ModBlockEntities.register(modEventBus); // Registry all custom block entities
+        ModMenuTypes.register(modEventBus); // Registry all custom block item menu types
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -102,7 +106,7 @@ public class MccourseMod {
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
-        // CUSTOM EVENT - Register all custom entity renderers
+        // CUSTOM EVENT - Register all custom entity renderers, custom menu screen, etc.
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Registry all custom item properties
@@ -113,6 +117,8 @@ public class MccourseMod {
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             // Registry all custom sittable blocks
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
+            // Registry all custom menu screen
+            MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
         }
         // CUSTOM EVENT - Register all custom particles
         @SubscribeEvent
