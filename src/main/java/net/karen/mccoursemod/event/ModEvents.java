@@ -3,9 +3,11 @@ package net.karen.mccoursemod.event;
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
+import net.karen.mccoursemod.item.ModItems;
 import net.karen.mccoursemod.item.custom.HammerItem;
 import net.karen.mccoursemod.potion.ModPotions;
 import net.karen.mccoursemod.util.ModTags;
+import net.karen.mccoursemod.villager.ModVillagers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,12 +16,16 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,9 +34,12 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.brewing.BrewingRecipeRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
+import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import static net.karen.mccoursemod.util.Util.slot;
 
@@ -85,6 +94,58 @@ public class ModEvents {
         builder.addMix(Potions.AWKWARD, Items.CARROT, ModPotions.HASTE_POTION.getHolder().get());
         builder.addMix(Potions.AWKWARD, Items.GLOWSTONE, ModPotions.NOTHING_POTION.getHolder().get());
         builder.addMix(Potions.AWKWARD, Items.COOKED_BEEF, ModPotions.SATURATION_POTION.getHolder().get());
+    }
+
+    // CUSTOM EVENT - Registry all custom villager trades
+    @SubscribeEvent
+    public static void addCustomTrades(VillagerTradesEvent event) {
+        if(event.getType() == VillagerProfession.FARMER) {
+            var trades = event.getTrades();
+            // Custom trade level 1
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 5),
+                    new ItemStack(ModItems.KOHLRABI.get(), 14), 6, 4, 0.05f));
+            // Custom trade level 1
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.DIAMOND, 3),
+                    new ItemStack(ModItems.HONEY_BERRIES.get(), 32), 6, 4, 0.05f));
+            // Custom trade level 2
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.BELL, 1),
+                    new ItemStack(ModItems.AURORA_ASHES.get(), 32), 1, 12, 0.05f));
+        }
+        if(event.getType() == ModVillagers.KAUPENGER.get()) {
+            var trades = event.getTrades();
+            // Custom trade level 1
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 12),
+                    new ItemStack(ModItems.CHISEL.get(), 1), 6, 4, 0.05f));
+            // Custom trade level 1
+            trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.DIAMOND, 19),
+                    new ItemStack(ModItems.TOMAHAWK.get(), 1), 6, 4, 0.05f));
+            // Custom trade level 2
+            trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 1),
+                    new ItemStack(ModItems.RADIATION_STAFF.get(), 1), 1, 12, 0.05f));
+        }
+    }
+
+    // CUSTOM EVENT - Wandering custom trades
+    @SubscribeEvent
+    public static void addWanderingTrades(WandererTradesEvent event) {
+        List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades(); // Common trades
+        List<VillagerTrades.ItemListing> rareTrades = event.getRareTrades(); // Rare trades
+        // Custom Common trades
+        genericTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 12),
+                new ItemStack(ModItems.RADIATION_STAFF.get(), 1), 1, 10, 0.2f
+        ));
+        // Custom Rare trades
+        rareTrades.add((pTrader, pRandom) -> new MerchantOffer(
+                new ItemCost(Items.NETHERITE_INGOT, 8),
+                new ItemStack(ModItems.BAR_BRAWL_MUSIC_DISC.get(), 1), 1, 10, 0.2f
+        ));
     }
 
     // CUSTOM EVENT - FLY custom effect
