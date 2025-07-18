@@ -11,6 +11,8 @@ import net.karen.mccoursemod.entity.client.TriceratopsRenderer;
 import net.karen.mccoursemod.item.ModCreativeModeTabs;
 import net.karen.mccoursemod.item.ModItemProperties;
 import net.karen.mccoursemod.item.ModItems;
+import net.karen.mccoursemod.particle.AlexandriteParticles;
+import net.karen.mccoursemod.particle.ModParticles;
 import net.karen.mccoursemod.potion.ModPotions;
 import net.karen.mccoursemod.sound.ModSounds;
 import net.karen.mccoursemod.villager.ModVillagers;
@@ -18,6 +20,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -57,6 +60,7 @@ public class MccourseMod {
         ModEnchantmentEffects.register(modEventBus); // Registry all custom enchantments
         ModEntities.register(modEventBus); // Registry all custom entities
         ModVillagers.register(modEventBus); // Registry all custom villagers
+        ModParticles.register(modEventBus); // Registry all custom particles
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -92,6 +96,7 @@ public class MccourseMod {
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+        // CUSTOM EVENT - Register all custom entity renderers
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Registry all custom item properties
@@ -102,6 +107,12 @@ public class MccourseMod {
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             // Registry all custom sittable blocks
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
+        }
+        // CUSTOM EVENT - Register all custom particles
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
+            // Register all custom particles
+            event.registerSpriteSet(ModParticles.ALEXANDRITE_PARTICLES.get(), AlexandriteParticles.Provider::new);
         }
     }
 }

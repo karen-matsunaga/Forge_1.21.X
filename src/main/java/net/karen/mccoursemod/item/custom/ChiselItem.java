@@ -2,6 +2,7 @@ package net.karen.mccoursemod.item.custom;
 
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
+import net.karen.mccoursemod.particle.ModParticles;
 import net.karen.mccoursemod.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -53,6 +54,13 @@ public class ChiselItem extends Item {
                 ((ServerLevel) level).sendParticles(ParticleTypes.HAPPY_VILLAGER,
                         context.getClickedPos().getX() + 0.5, context.getClickedPos().getY() + 1.5,
                         context.getClickedPos().getZ() + 0.5, 5, 0, 0, 0, 3);
+
+                // Custom particles
+                ((ServerLevel) level).sendParticles(ModParticles.ALEXANDRITE_PARTICLES.get(),
+                        context.getClickedPos().getX() + 0.5, context.getClickedPos().getY() + 1.0,
+                        context.getClickedPos().getZ() + 0.5, 8, 0, 0, 0, 2);
+
+                // Get COORDINATES data component -> When clicked on block
                 context.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), context.getClickedPos());
             }
         }
