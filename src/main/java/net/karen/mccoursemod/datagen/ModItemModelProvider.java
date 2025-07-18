@@ -152,7 +152,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     // CUSTOM METHOD - Custom Hand Held item (MAIN HAND) -> 2D Texture
     private ItemModelBuilder handHeldItem2dModel(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(),
+        return withExistingParent(item.getId().getPath() + "_2d",
                 ResourceLocation.parse("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,"item/" + item.getId().getPath() + "_2d"));
     }
