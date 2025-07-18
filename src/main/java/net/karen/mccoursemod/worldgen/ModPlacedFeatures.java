@@ -11,9 +11,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
+
 import java.util.List;
 
 public class ModPlacedFeatures {
@@ -30,6 +29,9 @@ public class ModPlacedFeatures {
 
     // Walnut custom tree
     public static final ResourceKey<PlacedFeature> WALNUT_PLACED_KEY = registerKey("walnut_placed");
+
+    // Honey Berry custom bush
+    public static final ResourceKey<PlacedFeature> HONEY_BERRY_BUSH_PLACED_KEY = registerKey("honey_berry_bush_placed");
 
     // CUSTOM METHOD - Registry all custom placed features
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -54,6 +56,11 @@ public class ModPlacedFeatures {
         register(context, WALNUT_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.WALNUT_KEY),
                  VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                                                     ModBlocks.WALNUT_SAPLING.get()));
+
+        // Custom bush
+        register(context, HONEY_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HONEY_BERRY_BUSH_KEY),
+                 List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(),
+                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
     }
 
     // CUSTOM METHOD - Registry all custom placed features (JSON file)
