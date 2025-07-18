@@ -110,6 +110,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // CUSTOM block entity
         block(ModBlocks.PEDESTAL);
+        blockWithItem(ModBlocks.GROWTH_CHAMBER);
     }
 
     // CUSTOM METHOD

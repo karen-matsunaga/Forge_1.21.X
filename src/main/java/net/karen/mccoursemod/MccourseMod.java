@@ -18,6 +18,7 @@ import net.karen.mccoursemod.particle.AlexandriteParticles;
 import net.karen.mccoursemod.particle.ModParticles;
 import net.karen.mccoursemod.potion.ModPotions;
 import net.karen.mccoursemod.screen.ModMenuTypes;
+import net.karen.mccoursemod.screen.custom.GrowthChamberScreen;
 import net.karen.mccoursemod.screen.custom.PedestalScreen;
 import net.karen.mccoursemod.sound.ModSounds;
 import net.karen.mccoursemod.villager.ModVillagers;
@@ -119,6 +120,7 @@ public class MccourseMod {
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
             // Registry all custom menu screen
             MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            MenuScreens.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
         }
         // CUSTOM EVENT - Register all custom particles
         @SubscribeEvent
