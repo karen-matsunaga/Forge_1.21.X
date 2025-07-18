@@ -2,6 +2,7 @@ package net.karen.mccoursemod.event;
 
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.entity.ModEntities;
+import net.karen.mccoursemod.entity.client.TomahawkProjectileModel;
 import net.karen.mccoursemod.entity.client.TriceratopsModel;
 import net.karen.mccoursemod.entity.custom.TriceratopsEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
@@ -19,6 +20,8 @@ public class ModEventBusEvents {
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         // Register all custom entity layers
         event.registerLayerDefinition(TriceratopsModel.LAYER_LOCATION, TriceratopsModel::createBodyLayer);
+        // Register all custom throwable projectiles layers
+        event.registerLayerDefinition(TomahawkProjectileModel.LAYER_LOCATION, TomahawkProjectileModel::createBodyLayer);
     }
 
     @SubscribeEvent

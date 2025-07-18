@@ -65,6 +65,9 @@ public class ModCreativeModeTabs {
                         // Custom spawn egg
                         output.accept(ModItems.TRICERATOPS_SPAWN_EGG.get());
 
+                        // Custom Throwable Projectiles
+                        output.accept(ModItems.TOMAHAWK.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());

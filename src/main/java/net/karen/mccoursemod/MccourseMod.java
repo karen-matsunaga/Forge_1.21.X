@@ -5,6 +5,7 @@ import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
 import net.karen.mccoursemod.enchantment.ModEnchantmentEffects;
 import net.karen.mccoursemod.entity.ModEntities;
+import net.karen.mccoursemod.entity.client.TomahawkProjectileRenderer;
 import net.karen.mccoursemod.entity.client.TriceratopsRenderer;
 import net.karen.mccoursemod.item.ModCreativeModeTabs;
 import net.karen.mccoursemod.item.ModItemProperties;
@@ -94,6 +95,8 @@ public class MccourseMod {
             ModItemProperties.addCustomItemProperties();
             // Registry all custom entity renderers
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
+            // Registry all custom throwable projectiles
+            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
         }
     }
 }
