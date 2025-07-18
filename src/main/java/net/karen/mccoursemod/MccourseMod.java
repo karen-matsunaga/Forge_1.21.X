@@ -5,6 +5,7 @@ import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
 import net.karen.mccoursemod.enchantment.ModEnchantmentEffects;
 import net.karen.mccoursemod.entity.ModEntities;
+import net.karen.mccoursemod.entity.client.ChairRenderer;
 import net.karen.mccoursemod.entity.client.TomahawkProjectileRenderer;
 import net.karen.mccoursemod.entity.client.TriceratopsRenderer;
 import net.karen.mccoursemod.item.ModCreativeModeTabs;
@@ -97,6 +98,8 @@ public class MccourseMod {
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
             // Registry all custom throwable projectiles
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
+            // Registry all custom sittable blocks
+            EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
         }
     }
 }

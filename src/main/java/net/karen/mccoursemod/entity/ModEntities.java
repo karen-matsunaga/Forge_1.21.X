@@ -1,6 +1,7 @@
 package net.karen.mccoursemod.entity;
 
 import net.karen.mccoursemod.MccourseMod;
+import net.karen.mccoursemod.entity.custom.ChairEntity;
 import net.karen.mccoursemod.entity.custom.TomahawkProjectileEntity;
 import net.karen.mccoursemod.entity.custom.TriceratopsEntity;
 import net.minecraft.world.entity.EntityType;
@@ -24,6 +25,10 @@ public class ModEntities {
             ENTITY_TYPES.register("tomahawk", () -> EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1.15f).build("tomahawk"));
 
+    // Registry all custom sittable blocks
+    public static final RegistryObject<EntityType<ChairEntity>> CHAIR =
+            ENTITY_TYPES.register("chair_entity", () -> EntityType.Builder.of(ChairEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("chair_entity"));
 
     // CUSTOM METHOD - Registry all entity types on event
     public static void register(IEventBus eventBus) { ENTITY_TYPES.register(eventBus); }
