@@ -1,6 +1,7 @@
 package net.karen.mccoursemod;
 
 import net.karen.mccoursemod.block.ModBlocks;
+import net.karen.mccoursemod.block.entity.ModBlockEntities;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
 import net.karen.mccoursemod.enchantment.ModEnchantmentEffects;
@@ -63,6 +64,7 @@ public class MccourseMod {
         ModVillagers.register(modEventBus); // Registry all custom villagers
         ModParticles.register(modEventBus); // Registry all custom particles
         ModLootModifiers.register(modEventBus); // Registry all custom loot table modifiers
+        ModBlockEntities.register(modEventBus); // Registry all custom block entities
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

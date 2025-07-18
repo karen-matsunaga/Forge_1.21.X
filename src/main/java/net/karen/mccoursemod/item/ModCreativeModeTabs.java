@@ -125,6 +125,9 @@ public class ModCreativeModeTabs {
 
                         // Custom block model
                         output.accept(ModBlocks.CHAIR.get());
+
+                        // Custom block entity
+                        output.accept(ModBlocks.PEDESTAL.get());
                     }).build());
 
     // CUSTOM METHOD - Registry all blocks and items on event

@@ -107,6 +107,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(ModBlocks.WALNUT_LEAVES);
         saplingBlock(ModBlocks.WALNUT_SAPLING);
+
+        // CUSTOM block entity
+        block(ModBlocks.PEDESTAL);
+    }
+
+    // CUSTOM METHOD
+    private void block(RegistryObject<? extends Block> block) {
+        simpleBlock(block.get(), models().getExistingFile(modLoc("block/" +
+                ForgeRegistries.BLOCKS.getKey(block.get()).getPath())));
     }
 
     // CUSTOM METHOD - Block with Cube format
