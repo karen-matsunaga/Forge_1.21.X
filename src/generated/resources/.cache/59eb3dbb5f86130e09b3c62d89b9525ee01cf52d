@@ -1,11 +1,13 @@
-// 1.21.1	2025-07-17T20:47:04.8006837	Loot Tables
+// 1.21.1	2025-07-17T21:36:44.7813031	Loot Tables
 cdb697b4f47740809ecdb90e81e8e5d2f56cfc86 data/mccoursemod/loot_table/blocks/alexandrite_block.json
 291a785f3fc73335884718fec6c7d2db06eb0048 data/mccoursemod/loot_table/blocks/alexandrite_button.json
 e2f97464bc942ffe437a44bbb36dc045d4199577 data/mccoursemod/loot_table/blocks/alexandrite_deepslate_ore.json
 d0ad4d5e3aeabf77ec2d12530e2bc9b7e6bef80e data/mccoursemod/loot_table/blocks/alexandrite_door.json
+53c263ec8b3ccdd64e355428b2e432d816a05143 data/mccoursemod/loot_table/blocks/alexandrite_end_ore.json
 04121cfbd55ea6a03beb97f215126e1c8c322663 data/mccoursemod/loot_table/blocks/alexandrite_fence.json
 4656e5892db0676a1a11c67090981c26feb418df data/mccoursemod/loot_table/blocks/alexandrite_fence_gate.json
 3c4293ae11b0d6ee2624fa50406295248e6e5d39 data/mccoursemod/loot_table/blocks/alexandrite_lamp.json
+a8aca99f67ae3eeaeb3168561d2461bbdc182fd5 data/mccoursemod/loot_table/blocks/alexandrite_nether_ore.json
 d1d3d62ab53e20992af52079535f898896c8c31a data/mccoursemod/loot_table/blocks/alexandrite_ore.json
 69c274240346ce5dd87a45e4937d31d03b83488e data/mccoursemod/loot_table/blocks/alexandrite_pressure_plate.json
 b6e3c8af0a3aa464df6efc820d3eb1350c7ca9f0 data/mccoursemod/loot_table/blocks/alexandrite_slab.json

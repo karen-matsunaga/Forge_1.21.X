@@ -76,6 +76,8 @@ public class ModCreativeModeTabs {
                         // Custom ore
                         output.accept(ModBlocks.ALEXANDRITE_ORE.get());
                         output.accept(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_END_ORE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_NETHER_ORE.get());
 
                         // Custom advanced block
                         output.accept(ModBlocks.MAGIC_BLOCK.get());

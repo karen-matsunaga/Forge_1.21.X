@@ -29,8 +29,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Custom block
         blockWithItem(ModBlocks.ALEXANDRITE_BLOCK);
         blockWithItem(ModBlocks.RAW_ALEXANDRITE_BLOCK);
+
         blockWithItem(ModBlocks.ALEXANDRITE_ORE);
         blockWithItem(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE);
+        blockWithItem(ModBlocks.ALEXANDRITE_NETHER_ORE);
+        blockWithItem(ModBlocks.ALEXANDRITE_END_ORE);
+
         blockWithItem(ModBlocks.MAGIC_BLOCK);
 
         // Custom stairs
