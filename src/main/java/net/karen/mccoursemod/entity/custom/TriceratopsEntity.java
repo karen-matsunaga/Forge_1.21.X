@@ -5,12 +5,16 @@ import net.karen.mccoursemod.entity.TriceratopsVariant;
 import net.karen.mccoursemod.item.ModItems;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.BossEvent;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -25,10 +29,14 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import javax.annotation.Nullable;
 
 public class TriceratopsEntity extends Animal {
+    // Triceratops variant
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(TriceratopsEntity.class, EntityDataSerializers.INT);
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+    // Triceratops boss bar
+    private final ServerBossEvent bossEvent = new ServerBossEvent(Component.literal("Our Cool Triceratops"),
+            BossEvent.BossBarColor.WHITE, BossEvent.BossBarOverlay.NOTCHED_20);
 
     public TriceratopsEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -148,5 +156,24 @@ public class TriceratopsEntity extends Animal {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.SNIFFER_DEATH;
+    }
+
+    /* Triceratops BOSS BAR */
+    @Override
+    public void startSeenByPlayer(ServerPlayer pServerPlayer) {
+        super.startSeenByPlayer(pServerPlayer);
+        this.bossEvent.addPlayer(pServerPlayer);
+    }
+
+    @Override
+    public void stopSeenByPlayer(ServerPlayer pServerPlayer) {
+        super.stopSeenByPlayer(pServerPlayer);
+        this.bossEvent.removePlayer(pServerPlayer);
+    }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
     }
 }
