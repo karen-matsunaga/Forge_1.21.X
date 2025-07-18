@@ -1,8 +1,9 @@
-// 1.21.1	2025-07-17T22:10:02.3596956	Registries
+// 1.21.1	2025-07-17T22:19:06.3556124	Registries
 ca80933386bad25b6406c78d116b637d19b704c8 data/mccoursemod/enchantment/lightning_striker.json
 55c70418ef4ff59c7db9767e4015998a42df9bf4 data/mccoursemod/forge/biome_modifier/add_alexandrite_ore.json
 57bebd6f0229438492c866dd029e6f7bb815ad14 data/mccoursemod/forge/biome_modifier/add_end_alexandrite_ore.json
 bcb69615bf881e82c14d00d04280de744008ebc9 data/mccoursemod/forge/biome_modifier/add_nether_alexandrite_ore.json
+0ee64d4aee028b1e1e4becd6658b616efa83a994 data/mccoursemod/forge/biome_modifier/add_tree_walnut.json
 5d2b814ea5ceacf61a4097764e48ec11364144fb data/mccoursemod/trim_material/alexandrite.json
 f5f1fb065e59a64b33ce63a70ebf812907f12bdf data/mccoursemod/trim_pattern/kaupen.json
 ab54724766908a857959e4850f9e0ce421e1917d data/mccoursemod/worldgen/configured_feature/alexandrite_ore.json
@@ -12,3 +13,4 @@ f59b1498ee4784d6fb291691f827d7494e88f14e data/mccoursemod/worldgen/configured_fe
 3fbf3f7a95797515a6c7dc11dc39f462977d5c7c data/mccoursemod/worldgen/placed_feature/alexandrite_ore_placed.json
 dc562062331e24e1bdc2fd937177539d1bc86d22 data/mccoursemod/worldgen/placed_feature/end_alexandrite_ore_placed.json
 2891e1292c229a08c715e6dc7702142acecd0cd1 data/mccoursemod/worldgen/placed_feature/nether_alexandrite_ore_placed.json
+c9082df440110c79a28a68fb5f2b18a9c0f7e36a data/mccoursemod/worldgen/placed_feature/walnut_placed.json
