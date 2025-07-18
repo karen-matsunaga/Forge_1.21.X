@@ -105,5 +105,7 @@
   "enchantment.mccoursemod.lightning_striker": "Lightning Striker",
 
   "entity.mccoursemod.triceratops": "Triceratops",
-  "entity.mccoursemod.tomahawk": "Tomahawk"
+  "entity.mccoursemod.tomahawk": "Tomahawk",
+
+  "entity.minecraft.villager.mccoursemod.kaupenger": "Kaupenger"
 }

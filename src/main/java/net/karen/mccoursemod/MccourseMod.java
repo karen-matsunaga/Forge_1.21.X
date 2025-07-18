@@ -13,6 +13,7 @@ import net.karen.mccoursemod.item.ModItemProperties;
 import net.karen.mccoursemod.item.ModItems;
 import net.karen.mccoursemod.potion.ModPotions;
 import net.karen.mccoursemod.sound.ModSounds;
+import net.karen.mccoursemod.villager.ModVillagers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -55,6 +56,7 @@ public class MccourseMod {
         ModPotions.register(modEventBus); // Registry all custom potions
         ModEnchantmentEffects.register(modEventBus); // Registry all custom enchantments
         ModEntities.register(modEventBus); // Registry all custom entities
+        ModVillagers.register(modEventBus); // Registry all custom villagers
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
