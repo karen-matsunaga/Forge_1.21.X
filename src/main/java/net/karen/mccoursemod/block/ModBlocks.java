@@ -172,6 +172,10 @@ public class ModBlocks {
             () -> new ModSaplingBlock(ModTreeGrowers.WALNUT,
                                       BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.END_STONE));
 
+    // CUSTOM block model
+    public static final RegistryObject<Block> CHAIR = registerBlock("chair",
+            () -> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
     // CUSTOM METHOD - Registry all custom blocks
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

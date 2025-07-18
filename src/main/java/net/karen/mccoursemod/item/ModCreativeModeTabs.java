@@ -119,6 +119,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WALNUT_PLANKS.get());
                         output.accept(ModBlocks.WALNUT_SAPLING.get());
                         output.accept(ModBlocks.WALNUT_LEAVES.get());
+
+                        // Custom block model
+                        output.accept(ModBlocks.CHAIR.get());
                     }).build());
 
     // CUSTOM METHOD - Registry all blocks and items on event
