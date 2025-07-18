@@ -92,6 +92,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom sapling
         saplingItem(ModBlocks.WALNUT_SAPLING);
 
+        // Custom spawn egg
+        if (ModItems.TRICERATOPS_SPAWN_EGG.getId() != null) {
+            withExistingParent(ModItems.TRICERATOPS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        }
+
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }

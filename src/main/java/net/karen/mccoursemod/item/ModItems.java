@@ -2,6 +2,7 @@ package net.karen.mccoursemod.item;
 
 import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.ModBlocks;
+import net.karen.mccoursemod.entity.ModEntities;
 import net.karen.mccoursemod.item.custom.ChiselItem;
 import net.karen.mccoursemod.item.custom.FuelItem;
 //import net.karen.mccoursemod.item.custom.MccourseFishingRodItem;
@@ -11,6 +12,7 @@ import net.karen.mccoursemod.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -127,8 +129,13 @@ public class ModItems {
     public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register("kohlrabi_seeds",
             () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
 
+    // Custom bush crop
     public static final RegistryObject<Item> HONEY_BERRIES = ITEMS.register("honey_berries",
             () -> new ItemNameBlockItem(ModBlocks.HONEY_BERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.HONEY_BERRY)));
+
+    // Custom spawn egg
+    public static final RegistryObject<Item> TRICERATOPS_SPAWN_EGG = ITEMS.register("triceratops_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TRICERATOPS, 0x53524b, 0xdac741, new Item.Properties()));
 
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",

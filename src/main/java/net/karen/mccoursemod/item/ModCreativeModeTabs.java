@@ -59,6 +59,12 @@ public class ModCreativeModeTabs {
                         // Custom crop
                         output.accept(ModItems.KOHLRABI_SEEDS.get());
 
+                        // Custom bush crop
+                        output.accept(ModItems.HONEY_BERRIES.get());
+
+                        // Custom spawn egg
+                        output.accept(ModItems.TRICERATOPS_SPAWN_EGG.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());
@@ -98,6 +104,9 @@ public class ModCreativeModeTabs {
 
                         // Custom crop block
                         output.accept(ModBlocks.KOHLRABI_CROP.get());
+
+                        // Custom bush crop block
+                        output.accept(ModBlocks.HONEY_BERRY_BUSH.get());
 
                         // Custom tree
                         output.accept(ModBlocks.WALNUT_LOG.get());

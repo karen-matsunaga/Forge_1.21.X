@@ -7,6 +7,7 @@
   "item.mccoursemod.aurora_ashes": "Aurora Ashes",
   "item.mccoursemod.kohlrabi_seeds": "Kohlrabi Seeds",
   "item.mccoursemod.honey_berries": "Honey Berries",
+  "item.mccoursemod.triceratops_spawn_egg": "Triceratops Spawn Egg",
 
   "item.mccoursemod.alexandrite_sword": "Alexandrite Sword",
   "item.mccoursemod.alexandrite_pickaxe": "Alexandrite Pickaxe",
@@ -98,5 +99,7 @@
   "trim_pattern.mccoursemod.kaupen": "Kaupen Armor Trim",
   "trim_material.mccoursemod.alexandrite": "Alexandrite Material",
 
-  "enchantment.mccoursemod.lightning_striker": "Lightning Striker"
+  "enchantment.mccoursemod.lightning_striker": "Lightning Striker",
+
+  "entity.mccoursemod.triceratops": "Triceratops"
 }
