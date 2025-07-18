@@ -2,6 +2,7 @@ package net.karen.mccoursemod;
 
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.block.entity.ModBlockEntities;
+import net.karen.mccoursemod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.karen.mccoursemod.effect.ModEffects;
 import net.karen.mccoursemod.enchantment.ModEnchantmentEffects;
@@ -22,6 +23,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -117,6 +119,12 @@ public class MccourseMod {
         public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
             // Register all custom particles
             event.registerSpriteSet(ModParticles.ALEXANDRITE_PARTICLES.get(), AlexandriteParticles.Provider::new);
+        }
+        // CUSTOM EVENT - Register all custom block entity renderers
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            // Register all custom block entity renderers
+            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
         }
     }
 }

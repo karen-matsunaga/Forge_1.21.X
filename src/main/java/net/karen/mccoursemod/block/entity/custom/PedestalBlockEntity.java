@@ -19,21 +19,26 @@ import javax.annotation.Nullable;
 public class PedestalBlockEntity extends BlockEntity {
     public final ItemStackHandler inventory = new ItemStackHandler(1) {
         @Override
-        protected int getStackLimit(int slot, @NotNull ItemStack stack) {
-            return 1;
-        }
+        protected int getStackLimit(int slot, @NotNull ItemStack stack) { return 1; }
 
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if(!level.isClientSide()) {
+            if (level != null && !level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
         }
     };
+    private float rotation;
 
     public PedestalBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.PEDESTAL_BE.get(), pPos, pBlockState);
+    }
+
+    public float getRenderingRotation() {
+        rotation += 0.5f;
+        if (rotation >= 360) { rotation = 0; }
+        return rotation;
     }
 
     public void clearContents() {
@@ -45,7 +50,6 @@ public class PedestalBlockEntity extends BlockEntity {
         for(int i = 0; i < inventory.getSlots(); i++) {
             inv.setItem(i, inventory.getStackInSlot(i));
         }
-
         Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
