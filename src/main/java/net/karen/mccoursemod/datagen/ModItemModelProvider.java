@@ -67,7 +67,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ALEXANDRITE_AXE);
         handheldItem(ModItems.ALEXANDRITE_HOE);
         handheldItem(ModItems.ALEXANDRITE_HAMMER);
-        handheldItem(ModItems.RADIATION_STAFF);
 
         // Custom trimmed armor item model
         trimmedArmorItem(ModItems.ALEXANDRITE_HELMET);
@@ -97,6 +96,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         if (ModItems.TRICERATOPS_SPAWN_EGG.getId() != null) {
             withExistingParent(ModItems.TRICERATOPS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         }
+
+        // Custom hand held item -> 2d texture
+        handHeldItem2dModel(ModItems.RADIATION_STAFF);
 
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
@@ -146,6 +148,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    // CUSTOM METHOD - Custom Hand Held item (MAIN HAND) -> 2D Texture
+    private ItemModelBuilder handHeldItem2dModel(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,"item/" + item.getId().getPath() + "_2d"));
     }
 
     // CUSTOM METHOD - Custom Button item model
