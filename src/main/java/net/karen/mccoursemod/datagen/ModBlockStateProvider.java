@@ -91,6 +91,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Custom bush block crop
         makeBush(((SweetBerryBushBlock) ModBlocks.HONEY_BERRY_BUSH.get()),
                 "honey_berry_bush_stage", "honey_berry_bush_stage");
+
+        // Custom tree
+        logBlock(ModBlocks.WALNUT_LOG.get());
+        axisBlock(ModBlocks.WALNUT_WOOD.get(), blockTexture(ModBlocks.WALNUT_LOG.get()), blockTexture(ModBlocks.WALNUT_LOG.get()));
+        logBlock(ModBlocks.STRIPPED_WALNUT_LOG.get());
+        axisBlock(ModBlocks.STRIPPED_WALNUT_WOOD.get(), blockTexture(ModBlocks.STRIPPED_WALNUT_LOG.get()), blockTexture(ModBlocks.STRIPPED_WALNUT_LOG.get()));
+
+        blockItem(ModBlocks.WALNUT_LOG);
+        blockItem(ModBlocks.WALNUT_WOOD);
+        blockItem(ModBlocks.STRIPPED_WALNUT_LOG);
+        blockItem(ModBlocks.STRIPPED_WALNUT_WOOD);
+
+        blockWithItem(ModBlocks.WALNUT_PLANKS);
+
+        leavesBlock(ModBlocks.WALNUT_LEAVES);
+        saplingBlock(ModBlocks.WALNUT_SAPLING);
     }
 
     // CUSTOM METHOD - Block with Cube format
@@ -159,5 +175,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
                                                               state.getValue(HoneyBerryBushBlock.AGE))).renderType("cutout"));
 
         return models;
+    }
+
+    // CUSTOM METHOD - Custom sapling block tree
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                                                             blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    // CUSTOM METHOD - Custom leave block tree
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                                                                     ResourceLocation.parse("minecraft:block/leaves"),
+                                                           "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 }

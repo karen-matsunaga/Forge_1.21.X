@@ -111,6 +111,28 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                           .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                           .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
                  )));
+
+        // Custom log
+        this.dropSelf(ModBlocks.WALNUT_LOG.get());
+
+        // Custom wood
+        this.dropSelf(ModBlocks.WALNUT_WOOD.get());
+
+        // Custom stripped log
+        this.dropSelf(ModBlocks.STRIPPED_WALNUT_LOG.get());
+
+        // Custom stripped wood
+        this.dropSelf(ModBlocks.STRIPPED_WALNUT_WOOD.get());
+
+        // Custom planks
+        this.dropSelf(ModBlocks.WALNUT_PLANKS.get());
+
+        // Custom sapling
+        this.dropSelf(ModBlocks.WALNUT_SAPLING.get());
+
+        // Custom leave
+        this.add(ModBlocks.WALNUT_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.WALNUT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     // CUSTOM METHOD - Custom ore loot table

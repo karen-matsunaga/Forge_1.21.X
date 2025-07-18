@@ -98,6 +98,15 @@ public class ModCreativeModeTabs {
 
                         // Custom crop block
                         output.accept(ModBlocks.KOHLRABI_CROP.get());
+
+                        // Custom tree
+                        output.accept(ModBlocks.WALNUT_LOG.get());
+                        output.accept(ModBlocks.WALNUT_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_WALNUT_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_WALNUT_WOOD.get());
+                        output.accept(ModBlocks.WALNUT_PLANKS.get());
+                        output.accept(ModBlocks.WALNUT_SAPLING.get());
+                        output.accept(ModBlocks.WALNUT_LEAVES.get());
                     }).build());
 
     // CUSTOM METHOD - Registry all blocks and items on event

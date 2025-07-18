@@ -7,11 +7,17 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -19,7 +25,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     // Registry all custom configured features
-    // Alexandrite
+    // Alexandrite custom ores
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_ALEXANDRITE_ORE_KEY =
             registerKey("alexandrite_ore");
 
@@ -29,9 +35,11 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_ALEXANDRITE_ORE_KEY =
             registerKey("end_alexandrite_ore");
 
+    // Walnut custom tree
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WALNUT_KEY = registerKey("walnut");
+
     // CUSTOM METHOD - Registry all custom configured features
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-        // ...
         RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceable = new BlockMatchTest(Blocks.NETHERRACK);
@@ -49,6 +57,16 @@ public class ModConfiguredFeatures {
         register(context, END_ALEXANDRITE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceable,
                  ModBlocks.ALEXANDRITE_END_ORE.get().defaultBlockState(), 9));
 
+        // Walnut custom tree
+        register(context, WALNUT_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                // Walnut log
+                BlockStateProvider.simple(ModBlocks.WALNUT_LOG.get()),
+                new ForkingTrunkPlacer(4, 4, 3),
+                // Walnut leave
+                BlockStateProvider.simple(ModBlocks.WALNUT_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 3),
+                // Walnut log + Walnut leave layer
+                new TwoLayersFeatureSize(1, 0, 2)).build());
     }
 
     // CUSTOM METHOD - Registry all configured features (JSON file)

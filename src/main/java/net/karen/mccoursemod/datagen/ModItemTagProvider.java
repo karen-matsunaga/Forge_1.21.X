@@ -1,6 +1,7 @@
 package net.karen.mccoursemod.datagen;
 
 import net.karen.mccoursemod.MccourseMod;
+import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.item.ModItems;
 import net.karen.mccoursemod.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -43,5 +44,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.CHESTPLATE_FLY).add(Items.NETHERITE_CHESTPLATE);
         tag(ModTags.Items.LEGGINGS_FLY).add(Items.NETHERITE_LEGGINGS);
         tag(ModTags.Items.BOOTS_FLY).add(Items.NETHERITE_BOOTS);
+
+        // Custom log and wood item tag
+        tag(ItemTags.LOGS_THAT_BURN).add(ModBlocks.WALNUT_LOG.get().asItem())
+                                    .add(ModBlocks.WALNUT_WOOD.get().asItem())
+                                    .add(ModBlocks.STRIPPED_WALNUT_LOG.get().asItem())
+                                    .add(ModBlocks.STRIPPED_WALNUT_WOOD.get().asItem());
+
+        // Custom planks
+        tag(ItemTags.PLANKS).add(ModBlocks.WALNUT_PLANKS.get().asItem());
     }
 }

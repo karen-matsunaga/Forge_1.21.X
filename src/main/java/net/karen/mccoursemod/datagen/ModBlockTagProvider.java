@@ -51,14 +51,18 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
 
         // Alexandrite tool tier
-        tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL)
-                .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
-                .add(Blocks.OBSIDIAN)
-                .addTag(BlockTags.NEEDS_IRON_TOOL);
+        tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL).add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
+                                                  .add(Blocks.OBSIDIAN)
+                                                  .addTag(BlockTags.NEEDS_IRON_TOOL);
 
         // Alexandrite incorrect tool tier
-        tag(ModTags.Blocks.INCORRECT_FOR_ALEXANDRITE_TOOL)
-                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
-                .remove(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_ALEXANDRITE_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                                                          .remove(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL);
+
+        // Walnut tree block tag
+        this.tag(BlockTags.LOGS_THAT_BURN).add(ModBlocks.WALNUT_LOG.get())
+                                          .add(ModBlocks.WALNUT_WOOD.get())
+                                          .add(ModBlocks.STRIPPED_WALNUT_LOG.get())
+                                          .add(ModBlocks.STRIPPED_WALNUT_WOOD.get());
     }
 }

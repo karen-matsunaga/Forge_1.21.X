@@ -89,6 +89,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom bush seed crop
         basicItem(ModItems.HONEY_BERRIES.get());
 
+        // Custom sapling
+        saplingItem(ModBlocks.WALNUT_SAPLING);
+
 //        // Custom fishing rod
 //        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }
@@ -186,6 +189,13 @@ public class ModItemModelProvider extends ItemModelProvider {
                                            .texture("layer0",
                                                     ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,
                                                                                           "item/" + itemName + "_used"));
+    }
+
+    // CUSTOM METHOD - Custom sapling item model
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 
     // CUSTOM METHOD - Custom Fishing Rod item model
