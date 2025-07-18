@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-17T22:10:02.3666649	Block States: mccoursemod
+// 1.21.1	2025-07-18T15:38:40.9500594	Block States: mccoursemod
 f7a9ed05e4c0a1202e8bcf365202ba7cb2be62ac assets/mccoursemod/blockstates/alexandrite_block.json
 0cafbe7ae27ac97223742c164d1ec7781a244c03 assets/mccoursemod/blockstates/alexandrite_button.json
 291e000454687c4991c3e826145a1d360567203c assets/mccoursemod/blockstates/alexandrite_deepslate_ore.json
@@ -17,6 +17,7 @@ fff21312cc3ff051bcbfd3196aa1ae539bac9d73 assets/mccoursemod/blockstates/alexandr
 7ada7b1a86cd071aaeab9476e6fb90a425578608 assets/mccoursemod/blockstates/honey_berry_bush.json
 b798e3f98a14cb82b5f13c7ee19986f914339bc5 assets/mccoursemod/blockstates/kohlrabi_crop.json
 f1dfc420f5927b06ec4e8a2d85b6229d337baa78 assets/mccoursemod/blockstates/magic_block.json
+6e61df3e4426d8b2207bbe7e24893c1dc9bd828a assets/mccoursemod/blockstates/pedestal.json
 5ffe791d80fdb7a62ac74297599f887101abb1b7 assets/mccoursemod/blockstates/raw_alexandrite_block.json
 efa63c6e55d4ac8dbec95493329000a4ed960590 assets/mccoursemod/blockstates/stripped_walnut_log.json
 7fd89e30c5e52500a3e0f4074dc27b583c5b3ae4 assets/mccoursemod/blockstates/stripped_walnut_wood.json
