@@ -17,6 +17,7 @@ import net.karen.mccoursemod.loot.ModLootModifiers;
 import net.karen.mccoursemod.particle.AlexandriteParticles;
 import net.karen.mccoursemod.particle.ModParticles;
 import net.karen.mccoursemod.potion.ModPotions;
+import net.karen.mccoursemod.recipe.ModRecipes;
 import net.karen.mccoursemod.screen.ModMenuTypes;
 import net.karen.mccoursemod.screen.custom.GrowthChamberScreen;
 import net.karen.mccoursemod.screen.custom.PedestalScreen;
@@ -72,6 +73,7 @@ public class MccourseMod {
         ModLootModifiers.register(modEventBus); // Registry all custom loot table modifiers
         ModBlockEntities.register(modEventBus); // Registry all custom block entities
         ModMenuTypes.register(modEventBus); // Registry all custom block item menu types
+        ModRecipes.register(modEventBus); // Registry all custom recipes
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

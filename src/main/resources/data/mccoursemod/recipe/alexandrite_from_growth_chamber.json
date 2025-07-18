@@ -1,0 +1,10 @@
+{
+  "type": "mccoursemod:growth_chamber",
+  "ingredient": {
+    "item": "mccoursemod:raw_alexandrite"
+  },
+  "result": {
+    "id": "mccoursemod:alexandrite",
+    "count": 12
+  }
+}
