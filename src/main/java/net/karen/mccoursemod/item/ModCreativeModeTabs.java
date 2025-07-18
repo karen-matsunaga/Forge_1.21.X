@@ -68,6 +68,9 @@ public class ModCreativeModeTabs {
                         // Custom Throwable Projectiles
                         output.accept(ModItems.TOMAHAWK.get());
 
+                        // Custom animated texture
+                        output.accept(ModItems.RADIATION_STAFF.get());
+
                         // Custom Mccourse Fishing Rod
 //                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());

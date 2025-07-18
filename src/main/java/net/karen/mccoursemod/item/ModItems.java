@@ -138,6 +138,10 @@ public class ModItems {
     public static final RegistryObject<Item> TOMAHAWK = ITEMS.register("tomahawk",
             () -> new TomahawkItem(new Item.Properties().stacksTo(16)));
 
+    // Custom animated texture
+    public static final RegistryObject<Item> RADIATION_STAFF = ITEMS.register("radiation_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     // Custom fishing rod
 //    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
 //            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));

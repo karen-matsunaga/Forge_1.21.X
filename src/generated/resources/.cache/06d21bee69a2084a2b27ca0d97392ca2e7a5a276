@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-18T09:57:50.3034604	Item Models: mccoursemod
+// 1.21.1	2025-07-18T11:35:58.1122952	Item Models: mccoursemod
 5af1bd1c0b012a9b1507dafdb35d5a969ed3c225 assets/mccoursemod/models/item/alexandrite.json
 2a1db29e420fbdbacf8bc3b889707825ec83bd16 assets/mccoursemod/models/item/alexandrite_axe.json
 78a09b25d6099cf19b6cf3efca9bb79ac2c48159 assets/mccoursemod/models/item/alexandrite_boots.json
@@ -63,6 +63,7 @@ f3e6da1420dbe62596e8d92e76eeabceab101c58 assets/mccoursemod/models/item/honey_be
 458c1d3aa02b68b4ffb2276f7c1b48f50eaf4d62 assets/mccoursemod/models/item/kaupen_armor_trim_smithing_template.json
 6558cd9343420d604e2353ca3749ce57ebc3e7b5 assets/mccoursemod/models/item/kohlrabi.json
 2587a8226dc2f3d342ca24ba253c2a3c450d9f9d assets/mccoursemod/models/item/kohlrabi_seeds.json
+8925300ae680219cd360d6332c5d6b01103c7f7b assets/mccoursemod/models/item/radiation_staff.json
 1877f652f796bc71bb7d3ccacee4dae67acf30c6 assets/mccoursemod/models/item/raw_alexandrite.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/mccoursemod/models/item/triceratops_spawn_egg.json
 197ebd951e8dd497a53ff0823f5686d004a2f549 assets/mccoursemod/models/item/walnut_sapling.json
