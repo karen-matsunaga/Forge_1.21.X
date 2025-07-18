@@ -133,6 +133,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         // Custom leave
         this.add(ModBlocks.WALNUT_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.WALNUT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        // Custom sittable block
+        this.dropSelf(ModBlocks.CHAIR.get());
     }
 
     // CUSTOM METHOD - Custom ore loot table
