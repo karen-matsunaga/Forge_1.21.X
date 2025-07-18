@@ -48,5 +48,8 @@ public class DataGenerators {
 
         // CUSTOM Trim
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
+
+        // CUSTOM Vanilla Loot Table Modifier
+        generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
     }
 }

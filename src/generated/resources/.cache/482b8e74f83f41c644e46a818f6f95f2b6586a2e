@@ -1,0 +1,6 @@
+// 1.21.1	2025-07-18T14:37:04.6049062	Global Loot Modifiers : mccoursemod
+c0a2709d659c676f1e6b992fecb672ab18e9ee69 data/forge/loot_modifiers/global_loot_modifiers.json
+47c5385de8df4df68cc0bdec56fbf5464452e513 data/mccoursemod/loot_modifiers/chisel_from_jungle_temple.json
+ed1b054dd86f234be306820d98bd15ebc486a3da data/mccoursemod/loot_modifiers/kohlrabi_from_creeper.json
+b1095eb8d5f4088971315f88f18acb4026ed171d data/mccoursemod/loot_modifiers/kohlrabi_seeds_from_short_grass.json
+08519c56a67f585baf2f318541a7716005bf1705 data/mccoursemod/loot_modifiers/kohlrabi_seeds_to_tall_grass.json

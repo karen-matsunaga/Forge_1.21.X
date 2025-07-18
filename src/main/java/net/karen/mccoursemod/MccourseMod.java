@@ -11,6 +11,7 @@ import net.karen.mccoursemod.entity.client.TriceratopsRenderer;
 import net.karen.mccoursemod.item.ModCreativeModeTabs;
 import net.karen.mccoursemod.item.ModItemProperties;
 import net.karen.mccoursemod.item.ModItems;
+import net.karen.mccoursemod.loot.ModLootModifiers;
 import net.karen.mccoursemod.particle.AlexandriteParticles;
 import net.karen.mccoursemod.particle.ModParticles;
 import net.karen.mccoursemod.potion.ModPotions;
@@ -61,6 +62,7 @@ public class MccourseMod {
         ModEntities.register(modEventBus); // Registry all custom entities
         ModVillagers.register(modEventBus); // Registry all custom villagers
         ModParticles.register(modEventBus); // Registry all custom particles
+        ModLootModifiers.register(modEventBus); // Registry all custom loot table modifiers
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
