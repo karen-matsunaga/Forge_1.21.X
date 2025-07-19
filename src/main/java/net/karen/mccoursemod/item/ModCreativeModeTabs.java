@@ -72,7 +72,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RADIATION_STAFF.get());
 
                         // Custom Mccourse Fishing Rod
-//                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
+                        output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> ALEXANDRITE_BLOCKS_TAB =

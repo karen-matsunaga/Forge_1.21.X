@@ -143,8 +143,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     // Custom fishing rod
-//    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
-//            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
+            () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
 
     // CUSTOM METHOD - Registry all custom items
     public static RegistryObject<Item> item(String name, Supplier<Item> supplier) {

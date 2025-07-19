@@ -101,7 +101,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handHeldItem2dModel(ModItems.RADIATION_STAFF);
 
 //        // Custom fishing rod
-//        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
+        fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
     }
 
     // CUSTOM METHOD - Custom trimmed armor item model -> Shoutout to El_Redstoniano for making this
@@ -214,22 +214,22 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     // CUSTOM METHOD - Custom Fishing Rod item model
-//    private void fishingRodWithCastOverride(RegistryObject<? extends Item> item) {
-//        ResourceLocation itemName = item.getId();
-//        if (itemName != null) {
-//            String itemId = item.getId().getPath();
-//            // Example: Mccourse Fishing Rod
-//            getBuilder(itemId).parent(new ModelFile.UncheckedModelFile("minecraft:item/handheld_rod"))
-//                    .texture("layer0", ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "item/" + itemId))
-//                    .override().predicate(ResourceLocation.withDefaultNamespace("cast"), 1.0f)
-//                    .model(new ModelFile.UncheckedModelFile(
-//                            ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "item/" + itemId + "_cast")))
-//                    .end();
-//            // Example: Mccourse Fishing Rod Cast
-//            getBuilder(itemId + "_cast").parent(new ModelFile.UncheckedModelFile("minecraft:item/fishing_rod"))
-//                                               .texture("layer0",
-//                                                        ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,
-//                                                                                        "item/" + itemId + "_cast"));
-//        }
-//    }
+    private void fishingRodWithCastOverride(RegistryObject<? extends Item> item) {
+        ResourceLocation itemName = item.getId();
+        if (itemName != null) {
+            String itemId = item.getId().getPath();
+            // Example: Mccourse Fishing Rod
+            getBuilder(itemId).parent(new ModelFile.UncheckedModelFile("minecraft:item/handheld_rod"))
+                    .texture("layer0", ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "item/" + itemId))
+                    .override().predicate(ResourceLocation.withDefaultNamespace("cast"), 1.0f)
+                    .model(new ModelFile.UncheckedModelFile(
+                            ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "item/" + itemId + "_cast")))
+                    .end();
+            // Example: Mccourse Fishing Rod Cast
+            getBuilder(itemId + "_cast").parent(new ModelFile.UncheckedModelFile("minecraft:item/fishing_rod"))
+                                               .texture("layer0",
+                                                        ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID,
+                                                                                        "item/" + itemId + "_cast"));
+        }
+    }
 }

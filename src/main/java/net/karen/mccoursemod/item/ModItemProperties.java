@@ -4,9 +4,9 @@ import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.component.ModDataComponentTypes;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.Item;
-//import net.minecraft.world.entity.player.Player;
-//import net.minecraft.world.item.FishingRodItem;
 
 public class ModItemProperties {
     // Registry all Item Properties
@@ -24,7 +24,7 @@ public class ModItemProperties {
         makeBow(ModItems.KAUPEN_BOW.get()); // Kaupen's bow
 
         // Custom FISHING ROD
-//        makeFishingRod(ModItems.MCCOURSE_FISHING_ROD.get()); // Mccourse Fishing Rod
+        makeFishingRod(ModItems.MCCOURSE_FISHING_ROD.get()); // Mccourse Fishing Rod
 
 //        // CUSTOM ELYTRA - Diamond Elytra
 //        makeElytra(ModItems.DIAMOND_ELYTRA.get());
@@ -67,17 +67,17 @@ public class ModItemProperties {
     }
 
     // CUSTOM METHOD - Mccourse Fishing Rod (CUSTOM FISHING ROD)
-//    private static void makeFishingRod(Item item) {
-//        ItemProperties.register(item, ResourceLocation.withDefaultNamespace("cast"),
-//            (stack, level, entity, i) -> {
-//            if (entity == null) { return 0.0F; }
-//            else {
-//                boolean flag = entity.getMainHandItem() == stack, flag1 = entity.getOffhandItem() == stack;
-//                if (entity.getMainHandItem().getItem() instanceof FishingRodItem) { flag1 = false; }
-//                return (flag || flag1) && entity instanceof Player && ((Player) entity).fishing != null ? 1.0F : 0.0F;
-//            }
-//        });
-//    }
+    private static void makeFishingRod(Item item) {
+        ItemProperties.register(item, ResourceLocation.withDefaultNamespace("cast"),
+            (stack, level, entity, i) -> {
+            if (entity == null) { return 0.0F; }
+            else {
+                boolean flag = entity.getMainHandItem() == stack, flag1 = entity.getOffhandItem() == stack;
+                if (entity.getMainHandItem().getItem() instanceof FishingRodItem) { flag1 = false; }
+                return (flag || flag1) && entity instanceof Player && ((Player) entity).fishing != null ? 1.0F : 0.0F;
+            }
+        });
+    }
 
     // CUSTOM METHOD - Alternate item (NBT Numbers)
 //    private static void makeAlternateItem(Item item) {
