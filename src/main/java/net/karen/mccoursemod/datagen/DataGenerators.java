@@ -51,5 +51,8 @@ public class DataGenerators {
 
         // CUSTOM Vanilla Loot Table Modifier
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
+
+        // CUSTOM Language
+        event.getGenerator().addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
     }
 }
