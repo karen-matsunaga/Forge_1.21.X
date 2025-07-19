@@ -1,50 +1,52 @@
-[17jul.2025 22:36:32.800] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\karen\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, mccoursemod, --all, --output, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\generated\resources, --existing, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\main\resources, --mixin.config, mixins.mccoursemod.json]
-[17jul.2025 22:36:32.800] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.7+6-LTS
-[17jul.2025 22:36:32.810] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.1 starting: java version 21.0.7 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[17jul.2025 22:36:32.912] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
-[17jul.2025 22:36:33.000] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/karen/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
-[17jul.2025 22:36:33.790] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[17jul.2025 22:36:34.706] [main/WARN] [mixin/]: Compatibility level JAVA_21 specified by mixins.mccoursemod.json is higher than the maximum level supported by this version of mixin (JAVA_13).
-[17jul.2025 22:36:34.706] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
-[17jul.2025 22:36:34.706] [main/ERROR] [mixin/]: Mixin config mixins.mccoursemod.json does not specify "minVersion" or "requiredFeatures" property
-[17jul.2025 22:36:34.710] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\karen\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, mccoursemod, --all, --output, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\generated\resources, --existing, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\main\resources]
-[17jul.2025 22:36:34.748] [main/INFO] [mixin/]: Attempting to load Fernflower decompiler (Threaded mode)
-[17jul.2025 22:36:34.750] [main/INFO] [mixin/]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver
-[17jul.2025 22:36:34.750] [main/INFO] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT]
-[17jul.2025 22:36:34.750] [main/INFO] [mixin/]: Selecting config mixins.mccoursemod.json
-[17jul.2025 22:36:34.758] [main/WARN] [mixin/]: Reference map 'mixins.mccourse.refmap.json' for mixins.mccoursemod.json could not be read. If this is a development environment you can ignore this message
-[17jul.2025 22:36:34.758] [main/INFO] [mixin/]: Preparing mixins.mccoursemod.json (11)
-[17jul.2025 22:36:34.856] [main/WARN] [mixin/]: Mixin environment was unable to detect the current side, sided mixins will not be applied
-[17jul.2025 22:36:35.502] [main/INFO] [mixin/]: Mixing LivingEntityMixin from mixins.mccoursemod.json into net.minecraft.world.entity.LivingEntity
-[17jul.2025 22:36:36.840] [main/INFO] [mixin/]: Mixing AbstractContainerMenuMixin from mixins.mccoursemod.json into net.minecraft.world.inventory.AbstractContainerMenu
-[17jul.2025 22:36:36.865] [main/INFO] [mixin/]: Mixing SignBlockEntityMixin from mixins.mccoursemod.json into net.minecraft.world.level.block.entity.SignBlockEntity
-[17jul.2025 22:36:37.040] [main/INFO] [mixin/]: Mixing EnchantmentMenuMixin from mixins.mccoursemod.json into net.minecraft.world.inventory.EnchantmentMenu
-[17jul.2025 22:36:37.090] [main/INFO] [mixin/]: Mixing ItemStackMixin from mixins.mccoursemod.json into net.minecraft.world.item.ItemStack
-[17jul.2025 22:36:37.221] [main/INFO] [mixin/]: Mixing AnvilMenuMixin from mixins.mccoursemod.json into net.minecraft.world.inventory.AnvilMenu
-[17jul.2025 22:36:37.720] [main/INFO] [mixin/]: Mixing SculkShriekerBlockEntityMixin from mixins.mccoursemod.json into net.minecraft.world.level.block.entity.SculkShriekerBlockEntity
-[17jul.2025 22:36:37.970] [main/INFO] [mixin/]: Mixing EnchantmentMixin from mixins.mccoursemod.json into net.minecraft.world.item.enchantment.Enchantment
-[17jul.2025 22:36:38.080] [main/INFO] [mixin/]: Mixing ServerPlayerMixin from mixins.mccoursemod.json into net.minecraft.server.level.ServerPlayer
-[17jul.2025 22:36:40.349] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 52.0.10, for MC 1.21.1 with MCP 20240808.132146
-[17jul.2025 22:36:40.349] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v52.0.10 Initialized
-[17jul.2025 22:36:40.386] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[17jul.2025 22:36:40.480] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[17jul.2025 22:36:40.480] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.398 milliseconds
-[17jul.2025 22:36:40.900] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [mccoursemod]
-[17jul.2025 22:36:40.980] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/karen/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
-[17jul.2025 22:36:40.980] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/karen/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
-[17jul.2025 22:36:41.130] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[17jul.2025 22:36:41.356] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 215 ms
-[17jul.2025 22:36:41.356] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[17jul.2025 22:36:41.430] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 77 ms
-[17jul.2025 22:36:41.430] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id mccoursemod
-[17jul.2025 22:36:41.470] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id mccoursemod finished after 37 ms
-[17jul.2025 22:36:41.470] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id mccoursemod
-[17jul.2025 22:36:41.475] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id mccoursemod finished after 4 ms
-[17jul.2025 22:36:41.475] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: mccoursemod
-[17jul.2025 22:36:41.514] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: mccoursemod finished after 37 ms
-[17jul.2025 22:36:41.514] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: mccoursemod
-[17jul.2025 22:36:41.668] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: mccoursemod finished after 154 ms
-[17jul.2025 22:36:41.670] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[17jul.2025 22:36:41.710] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 43 ms
-[17jul.2025 22:36:41.714] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 575 ms
-[17jul.2025 22:36:41.725] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 279, old count: 276, new count: 280, removed stale: 0, written: 3
+[18jul.2025 19:06:12.150] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\karen\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, mccoursemod, --all, --output, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\generated\resources, --existing, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\main\resources, --mixin.config, mixins.mccoursemod.json]
+[18jul.2025 19:06:12.150] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.7+6-LTS
+[18jul.2025 19:06:12.150] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.1 starting: java version 21.0.7 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[18jul.2025 19:06:12.248] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[18jul.2025 19:06:12.340] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/karen/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
+[18jul.2025 19:06:13.295] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[18jul.2025 19:06:14.142] [main/WARN] [mixin/]: Compatibility level JAVA_21 specified by mixins.mccoursemod.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[18jul.2025 19:06:14.142] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[18jul.2025 19:06:14.142] [main/ERROR] [mixin/]: Mixin config mixins.mccoursemod.json does not specify "minVersion" or "requiredFeatures" property
+[18jul.2025 19:06:14.142] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\karen\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, mccoursemod, --all, --output, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\generated\resources, --existing, C:\Users\karen\Downloads\Udemy\MinecraftModding\Forge_1.21.X\src\main\resources]
+[18jul.2025 19:06:14.189] [main/INFO] [mixin/]: Attempting to load Fernflower decompiler (Threaded mode)
+[18jul.2025 19:06:14.189] [main/INFO] [mixin/]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver
+[18jul.2025 19:06:14.205] [main/INFO] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT]
+[18jul.2025 19:06:14.205] [main/INFO] [mixin/]: Selecting config mixins.mccoursemod.json
+[18jul.2025 19:06:14.205] [main/WARN] [mixin/]: Reference map 'mixins.mccourse.refmap.json' for mixins.mccoursemod.json could not be read. If this is a development environment you can ignore this message
+[18jul.2025 19:06:14.221] [main/INFO] [mixin/]: Preparing mixins.mccoursemod.json (11)
+[18jul.2025 19:06:14.357] [main/WARN] [mixin/]: Mixin environment was unable to detect the current side, sided mixins will not be applied
+[18jul.2025 19:06:15.070] [main/INFO] [mixin/]: Mixing LivingEntityMixin from mixins.mccoursemod.json into net.minecraft.world.entity.LivingEntity
+[18jul.2025 19:06:16.544] [main/INFO] [mixin/]: Mixing AbstractContainerMenuMixin from mixins.mccoursemod.json into net.minecraft.world.inventory.AbstractContainerMenu
+[18jul.2025 19:06:16.561] [main/INFO] [mixin/]: Mixing SignBlockEntityMixin from mixins.mccoursemod.json into net.minecraft.world.level.block.entity.SignBlockEntity
+[18jul.2025 19:06:16.700] [main/INFO] [mixin/]: Mixing EnchantmentMenuMixin from mixins.mccoursemod.json into net.minecraft.world.inventory.EnchantmentMenu
+[18jul.2025 19:06:16.748] [main/INFO] [mixin/]: Mixing ItemStackMixin from mixins.mccoursemod.json into net.minecraft.world.item.ItemStack
+[18jul.2025 19:06:16.904] [main/INFO] [mixin/]: Mixing AnvilMenuMixin from mixins.mccoursemod.json into net.minecraft.world.inventory.AnvilMenu
+[18jul.2025 19:06:17.393] [main/INFO] [mixin/]: Mixing SculkShriekerBlockEntityMixin from mixins.mccoursemod.json into net.minecraft.world.level.block.entity.SculkShriekerBlockEntity
+[18jul.2025 19:06:17.598] [main/INFO] [mixin/]: Mixing EnchantmentMixin from mixins.mccoursemod.json into net.minecraft.world.item.enchantment.Enchantment
+[18jul.2025 19:06:17.693] [main/INFO] [mixin/]: Mixing ServerPlayerMixin from mixins.mccoursemod.json into net.minecraft.server.level.ServerPlayer
+[18jul.2025 19:06:19.829] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 52.0.10, for MC 1.21.1 with MCP 20240808.132146
+[18jul.2025 19:06:19.829] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v52.0.10 Initialized
+[18jul.2025 19:06:19.860] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[18jul.2025 19:06:20.009] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[18jul.2025 19:06:20.019] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 5.090 milliseconds
+[18jul.2025 19:06:20.415] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [mccoursemod]
+[18jul.2025 19:06:20.498] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/karen/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[18jul.2025 19:06:20.498] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/karen/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.10_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
+[18jul.2025 19:06:20.687] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[18jul.2025 19:06:20.848] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 155 ms
+[18jul.2025 19:06:20.848] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[18jul.2025 19:06:20.907] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 56 ms
+[18jul.2025 19:06:20.907] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id mccoursemod
+[18jul.2025 19:06:20.950] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id mccoursemod finished after 44 ms
+[18jul.2025 19:06:20.950] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id mccoursemod
+[18jul.2025 19:06:20.950] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id mccoursemod finished after 4 ms
+[18jul.2025 19:06:20.950] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: mccoursemod
+[18jul.2025 19:06:20.997] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: mccoursemod finished after 40 ms
+[18jul.2025 19:06:20.997] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: mccoursemod
+[18jul.2025 19:06:21.161] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: mccoursemod finished after 158 ms
+[18jul.2025 19:06:21.161] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[18jul.2025 19:06:21.187] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 38 ms
+[18jul.2025 19:06:21.187] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : mccoursemod
+[18jul.2025 19:06:21.202] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : mccoursemod finished after 4 ms
+[18jul.2025 19:06:21.202] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 508 ms
+[18jul.2025 19:06:21.215] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 294, old count: 290, new count: 295, removed stale: 0, written: 4
