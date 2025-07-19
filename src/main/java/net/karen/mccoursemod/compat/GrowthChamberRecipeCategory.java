@@ -32,7 +32,7 @@ public class GrowthChamberRecipeCategory implements IRecipeCategory<GrowthChambe
     private final IDrawable icon;
 
     public GrowthChamberRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 83);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.GROWTH_CHAMBER.get()));
     }
 
@@ -48,8 +48,14 @@ public class GrowthChamberRecipeCategory implements IRecipeCategory<GrowthChambe
     public @Nullable IDrawable getIcon() { return icon; }
 
     @Override
+    public int getHeight() { return background.getHeight(); }
+
+    @Override
+    public int getWidth() { return background.getWidth(); }
+
+    @Override
     public void draw(GrowthChamberRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-        background.draw(guiGraphics, 20, 20);
+        background.draw(guiGraphics, 0, 0);
     }
 
     @Override
