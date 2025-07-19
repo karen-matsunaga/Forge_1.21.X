@@ -18,11 +18,7 @@ public record LightningStrikerEnchantmentEffect() implements EnchantmentEntityEf
     @Override
     public void apply(@NotNull ServerLevel level, int enchantmentLevel, @NotNull EnchantedItemInUse use,
                       @NotNull Entity entity, @NotNull Vec3 vec3) {
-        if (enchantmentLevel == 1) { // Lightning Striker 1
-            EntityType.LIGHTNING_BOLT.spawn(level, entity.getOnPos(), MobSpawnType.TRIGGERED);
-        }
-        if (enchantmentLevel == 2) { // Lightning Striker 2
-            EntityType.LIGHTNING_BOLT.spawn(level, entity.getOnPos(), MobSpawnType.TRIGGERED);
+        for (int i = 1; i <= enchantmentLevel; i++) { // Lightning Striker 1
             EntityType.LIGHTNING_BOLT.spawn(level, entity.getOnPos(), MobSpawnType.TRIGGERED);
         }
     }
