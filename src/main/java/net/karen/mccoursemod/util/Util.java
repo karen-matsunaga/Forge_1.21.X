@@ -2,18 +2,20 @@ package net.karen.mccoursemod.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -85,20 +87,6 @@ public class Util {
                 entity.getZ(), 5, 0.2, 0.2, 0.2, 0.1);
     }
 
-    // CUSTOM METHOD - Enchanted ITEM
-//    public static ItemStack createEnchantedItem(Item item, Enchantment enchantment, int level) {
-//        ItemStack stack = new ItemStack(item);
-//        stack.enchant(enchantment, level);
-//        return stack;
-//    }
-
-    // CUSTOM METHOD - Enchanted BOOK item
-//    public static ItemStack createEnchantedBook(Enchantment enchantment, int level) {
-//        ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-//        EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(enchantment, level));
-//        return book;
-//    }
-
     // CUSTOM METHOD - NETWORK message (CLIENT -> SERVER)
 //    public static void network(Object message) {
 //        ModNetworks.PACKET_HANDLER.sendToServer(message);
@@ -165,14 +153,9 @@ public class Util {
 //    }
 
     // CUSTOM METHOD - Player has enchantment on slots
-//    public static int hasEnchant(Enchantment enchantment, Player player) {
-//        return EnchantmentHelper.getEnchantmentLevel(enchantment, player);
-//    }
-
-    // CUSTOM METHOD - Item has enchantment
-//    public static int enchant(ItemStack stack, Enchantment enchantment) {
-//        return stack.getEnchantmentLevel(enchantment);
-//    }
+    public static int hasEnchant(Holder<Enchantment> enchantment, Player player) {
+        return EnchantmentHelper.getEnchantmentLevel(enchantment, player);
+    }
 
     // CUSTOM METHOD - Drop enchanted book and base item on ground [world]
     public static void dropItem(ServerLevel world, BlockPos pos, ItemStack stack) {
@@ -203,31 +186,6 @@ public class Util {
         drop.setDeltaMovement(Vec3.ZERO);
         world.addFreshEntity(drop);
     }
-
-    // CUSTOM METHOD - GROUPED enchanted book
-//    public static void groupedEnch(Map<Enchantment, Integer> enchantments,
-//                                   Level level, BlockPos pos) {
-//        ItemStack item = new ItemStack(Items.ENCHANTED_BOOK);
-//        enchantments.forEach((ench, lvl) -> {
-//            if (lvl > 0) { EnchantedBookItem.addEnchantment(item, new EnchantmentInstance(ench, lvl)); }
-//        });
-//        dropEnchanted(level, pos, item); // Drop grouped enchanted book WITH enchantment
-//    }
-
-    // CUSTOM METHOD - INDIVIDUAL enchanted book
-//    public static void individualEnch(Map<Enchantment, Integer> enchantments,
-//                                      Level level, BlockPos pos) {
-//        enchantments.forEach((enc, lvl) -> {
-//            ItemStack item = new ItemStack(Items.ENCHANTED_BOOK);
-//            if (lvl > 0) { EnchantedBookItem.addEnchantment(item, new EnchantmentInstance(enc, lvl)); }
-//            dropEnchanted(level, pos, item);
-//        });
-//    }
-
-    // CUSTOM METHOD - GET enchantments from Item (Armor, tool, enchanted Book etc.)
-//    public static Map<Enchantment, Integer> getEnch(ItemStack item) {
-//        return EnchantmentHelper.getEnchantments(item);
-//    }
 
     // CUSTOM METHOD - GET items on placed above or below block
     public static List<ItemEntity> getItem(Level level, BlockPos pos) {
@@ -420,11 +378,11 @@ public class Util {
 //    }
 
     // CUSTOM METHOD - Mccourse Fishing Rod - Random item
-    public static void mccourseFishingRodDrops(RandomSource random, float chance,
-                                               int min, int max, List<ItemStack> drops, Item item) {
-        if (random.nextFloat() < chance) {
-            int fishAmount = min + random.nextInt(max);
-            drops.add(new ItemStack(item, fishAmount)); // Guaranteed drop
-        }
-    }
+//    public static void mccourseFishingRodDrops(RandomSource random, float chance,
+//                                               int min, int max, List<ItemStack> drops, Item item) {
+//        if (random.nextFloat() < chance) {
+//            int fishAmount = min + random.nextInt(max);
+//            drops.add(new ItemStack(item, fishAmount)); // Guaranteed drop
+//        }
+//    }
 }
