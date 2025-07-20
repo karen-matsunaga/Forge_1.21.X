@@ -7,6 +7,7 @@ import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
@@ -44,7 +45,7 @@ public class ModTags {
         }
     }
 
-//    // CUSTOM CLASS - Registry all custom enchantment tags
+    // CUSTOM CLASS - Registry all custom enchantment tags
 //    public static class Enchantments {
 //        public static final TagKey<Enchantment> LIGHTNING_STRIKER = createTag("lightning_striker");
 //

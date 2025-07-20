@@ -54,5 +54,8 @@ public class DataGenerators {
 
         // CUSTOM Language
         generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
+
+        // CUSTOM Enchantment
+//        generator.addProvider(event.includeServer(), new ModEnchantmentTagProvider(packOutput, lookupProvider));
     }
 }

@@ -16,9 +16,7 @@ import net.minecraft.world.item.enchantment.LevelBasedValue;
 
 public class ModEnchantments {
     // Registry all custom enchantments -> enchantment name on JSON file
-    public static final ResourceKey<Enchantment> LIGHTNING_STRIKER =
-            ResourceKey.create(Registries.ENCHANTMENT,
-                               ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, "lightning_striker"));
+    public static final ResourceKey<Enchantment> LIGHTNING_STRIKER = createTag("lightning_striker");
 
     // CUSTOM METHOD - Registry all custom enchantments (JSON file)
     public static void bootstrap(BootstrapContext<Enchantment> context) {
@@ -43,5 +41,10 @@ public class ModEnchantments {
     private static void register(BootstrapContext<Enchantment> registry,
                                  ResourceKey<Enchantment> key, Enchantment.Builder builder) {
         registry.register(key, builder.build(key.location()));
+    }
+
+    // CUSTOM METHOD - Registry all custom enchantment resource keys
+    public static ResourceKey<Enchantment> createTag(String name) {
+        return ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(MccourseMod.MOD_ID, name));
     }
 }
