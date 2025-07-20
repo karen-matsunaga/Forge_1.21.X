@@ -53,6 +53,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
 
         // CUSTOM Language
-        event.getGenerator().addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
+        generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
     }
 }

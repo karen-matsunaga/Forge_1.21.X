@@ -24,6 +24,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
@@ -40,8 +41,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import static net.karen.mccoursemod.util.Util.slot;
+import static net.karen.mccoursemod.util.Util.*;
 
 @Mod.EventBusSubscriber(modid = MccourseMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
@@ -173,6 +175,7 @@ public class ModEvents {
         double x = player.getX(), y = player.getY(), z = player.getZ(); // Player drop position
         BlockState block = event.getState();
         BlockPos pos = event.getPos(); // Block position
+        double bX = pos.getX(), bY = pos.getY(), bZ = pos.getZ();
         if (block.is(Blocks.STONE)) {
             event.setCanceled(true); // Cancel DEFAULT event
             world.destroyBlock(pos, false); // Cancel DEFAULT drop
@@ -180,9 +183,16 @@ public class ModEvents {
             stone.set(ModDataComponentTypes.MULTIPLIER.get(), 50); // Set int value
             Integer multiplierValue = stone.get(ModDataComponentTypes.MULTIPLIER.get()); // Get int value
             if (multiplierValue != null && multiplierValue > 0) { stone.setCount(multiplierValue); } // Set int value
-            ItemEntity item = new ItemEntity(world, x + 0.5, y + 0.5, z + 0.5, stone); // Drop custom drop
+            ItemEntity item = new ItemEntity(world, bX + 0.5, bY + 0.5, bZ + 0.5, stone); // Drop custom drop
             item.setDeltaMovement(Vec3.ZERO); // Drop position
             world.addFreshEntity(item); // Drop on air
         }
+        // Enchanted item
+        createEnchantedItem(Items.NETHERITE_SWORD, Map.of(Enchantments.SHARPNESS.getOrThrow(world), 7), world, pos);
+        createGroupedEnchantedBook(Map.of(Enchantments.FORTUNE.getOrThrow(world), 10), world, pos);
+        ItemStack item = createEnchantedBook(Enchantments.EFFICIENCY.getOrThrow(world), 4); // Enchanted book
+        ItemEntity test = new ItemEntity(world, bX + 0.5, bY + 0.5, bZ + 0.5, item); // Drop custom drop
+        test.setDeltaMovement(Vec3.ZERO); // Drop position
+        world.addFreshEntity(test); // Drop on air
     }
 }

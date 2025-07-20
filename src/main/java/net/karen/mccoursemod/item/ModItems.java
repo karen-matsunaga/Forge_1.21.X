@@ -4,7 +4,6 @@ import net.karen.mccoursemod.MccourseMod;
 import net.karen.mccoursemod.block.ModBlocks;
 import net.karen.mccoursemod.entity.ModEntities;
 import net.karen.mccoursemod.item.custom.*;
-//import net.karen.mccoursemod.item.custom.MccourseFishingRodItem;
 import net.karen.mccoursemod.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -145,6 +144,14 @@ public class ModItems {
     // Custom fishing rod
     public static final RegistryObject<Item> MCCOURSE_FISHING_ROD = item("mccourse_fishing_rod",
             () -> new MccourseFishingRodItem(new Item.Properties().fireResistant()));
+
+    // Level Charger Plus
+    public static final RegistryObject<Item> LEVEL_CHARGER_PLUS = ITEMS.register("level_charger_plus",
+            () -> new LevelChargerItem(new Item.Properties().fireResistant().stacksTo(64), 1));
+
+    // Level Charger Minus
+    public static final RegistryObject<Item> LEVEL_CHARGER_MINUS = ITEMS.register("level_charger_minus",
+            () -> new LevelChargerItem(new Item.Properties().fireResistant().stacksTo(64), -1));
 
     // CUSTOM METHOD - Registry all custom items
     public static RegistryObject<Item> item(String name, Supplier<Item> supplier) {

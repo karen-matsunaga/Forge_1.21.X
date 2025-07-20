@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentTarget;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
 
 public class ModEnchantments {
     // Registry all custom enchantments -> enchantment name on JSON file
@@ -27,13 +28,14 @@ public class ModEnchantments {
         register(context, LIGHTNING_STRIKER,
                  Enchantment.enchantment(Enchantment.definition(items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
                                                                 items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
-                                                                5, 2,
+                                                                5, 10,
                                                                 Enchantment.dynamicCost(5, 8),
                                                                 Enchantment.dynamicCost(25, 8),
                                                                 2, EquipmentSlotGroup.MAINHAND))
                             .exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
                             .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER,
-                                        EnchantmentTarget.VICTIM, new LightningStrikerEnchantmentEffect()));
+                                        EnchantmentTarget.VICTIM, new LightningStrikerEnchantmentEffect(
+                                                                  LevelBasedValue.perLevel(0.5F, 0.15F))));
 
     }
 

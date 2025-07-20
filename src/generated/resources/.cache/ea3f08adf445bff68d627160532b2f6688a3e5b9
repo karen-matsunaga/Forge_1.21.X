@@ -1,8 +1,9 @@
-// 1.21.1	2025-07-17T22:10:02.3616945	Tags for minecraft:item mod id mccoursemod
+// 1.21.1	2025-07-19T19:36:07.0404832	Tags for minecraft:item mod id mccoursemod
 42c124bc504a07210b7fa52f0c203a2d4d4fefcc data/mccoursemod/tags/item/boots_fly.json
 bec1c5abb7b7d1e4de7e40d05be4354ecd69e8e5 data/mccoursemod/tags/item/chestplate_fly.json
 e68a63b40b03aaacb0f256893afb47834d7c255a data/mccoursemod/tags/item/helmet_fly.json
 7fc4aafef637f133256d72c6bd6f3b7f294bd04e data/mccoursemod/tags/item/leggings_fly.json
+aab193eeeca5accc13bd0c1e4f2a0ef6b147cb58 data/mccoursemod/tags/item/level_charger_general.json
 b690a44463b4e70ffba0a36b261a9c9f7f79f856 data/mccoursemod/tags/item/transformable_items.json
 774205992e78cc4b0cce335e5a396e3a2426ecab data/minecraft/tags/item/logs_that_burn.json
 35c150486978b73ed31524a0f3c649b1a4d05c4f data/minecraft/tags/item/planks.json

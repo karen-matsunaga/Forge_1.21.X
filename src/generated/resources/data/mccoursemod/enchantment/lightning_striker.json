@@ -8,7 +8,12 @@
       {
         "affected": "victim",
         "effect": {
-          "type": "mccoursemod:lightning_striker"
+          "type": "mccoursemod:lightning_striker",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 0.5,
+            "per_level_above_first": 0.15
+          }
         },
         "enchanted": "attacker"
       }
@@ -19,7 +24,7 @@
     "base": 25,
     "per_level_above_first": 8
   },
-  "max_level": 2,
+  "max_level": 10,
   "min_cost": {
     "base": 5,
     "per_level_above_first": 8

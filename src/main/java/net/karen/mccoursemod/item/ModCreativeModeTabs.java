@@ -73,6 +73,10 @@ public class ModCreativeModeTabs {
 
                         // Custom Mccourse Fishing Rod
                         output.accept(ModItems.MCCOURSE_FISHING_ROD.get());
+
+                        // Level Charger items
+                        output.accept(ModItems.LEVEL_CHARGER_PLUS.get());
+                        output.accept(ModItems.LEVEL_CHARGER_MINUS.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> ALEXANDRITE_BLOCKS_TAB =

@@ -100,8 +100,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Custom hand held item -> 2d texture
         handHeldItem2dModel(ModItems.RADIATION_STAFF);
 
-//        // Custom fishing rod
+        // Custom fishing rod
         fishingRodWithCastOverride(ModItems.MCCOURSE_FISHING_ROD);
+
+        // Level Charger items
+        // Level Charger
+        basicItem(ModItems.LEVEL_CHARGER_PLUS.get());
+        basicItem(ModItems.LEVEL_CHARGER_MINUS.get());
     }
 
     // CUSTOM METHOD - Custom trimmed armor item model -> Shoutout to El_Redstoniano for making this

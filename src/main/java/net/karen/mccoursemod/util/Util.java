@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -32,6 +33,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.registries.tags.ITagManager;
 import java.util.List;
+import java.util.Map;
 
 public class Util {
     public static boolean IGNORE_LAPIS = false; // Avoid consumption of LAPIS LAZULI
@@ -385,4 +387,28 @@ public class Util {
 //            drops.add(new ItemStack(item, fishAmount)); // Guaranteed drop
 //        }
 //    }
+
+    // CUSTOM METHOD - Enchanted book
+    public static ItemStack createEnchantedBook(Holder<Enchantment> ench, int level) {
+        return EnchantedBookItem.createForEnchantment(new EnchantmentInstance(ench, level));
+    }
+
+    // CUSTOM METHOD - Grouped Enchanted book
+    public static void createGroupedEnchantedBook(Map<Holder<Enchantment>, Integer> enchant,
+                                                  Level level, BlockPos pos) {
+        ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+        enchant.forEach((ench, integer) -> {
+            if (integer > 0) { book.enchant(ench, integer); } });
+        dropEnchanted(level, pos, book);
+    }
+
+    // CUSTOM METHOD - Enchanted item
+    public static void createEnchantedItem(Item item,
+                                           Map<Holder<Enchantment>, Integer> enchantment,
+                                           Level level, BlockPos pos) {
+        ItemStack stack = new ItemStack(item);
+        enchantment.forEach((ench, integer) -> {
+            if (integer > 0) { stack.enchant(ench, integer); }});
+        dropEnchanted(level, pos, stack);
+    }
 }

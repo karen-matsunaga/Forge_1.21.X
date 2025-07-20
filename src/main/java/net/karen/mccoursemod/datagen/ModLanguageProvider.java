@@ -58,6 +58,8 @@ public class ModLanguageProvider extends LanguageProvider {
         addItem(ModItems.RADIATION_STAFF, "Radiation Staff");
         addItem(ModItems.KAUPEN_SMITHING_TEMPLATE, "Kaupen Armor Trim Smithing Template");
         addItem(ModItems.BAR_BRAWL_MUSIC_DISC, "Bar Brawl Music Disc");
+        addItem(ModItems.LEVEL_CHARGER_PLUS, "Level Charger Plus");
+        addItem(ModItems.LEVEL_CHARGER_MINUS, "Level Charger Minus");
 
         // CUSTOM Tools
         addItem(ModItems.ALEXANDRITE_SWORD, "Alexandrite Sword");
