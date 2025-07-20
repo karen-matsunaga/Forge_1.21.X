@@ -39,37 +39,32 @@ public class LevelChargerItem extends Item {
                 player(player, "The item has no enchantments!", darkRed);
                 return InteractionResultHolder.fail(changerStack);
             }
-            if (amount < 0) { // Check enchantment levels
-                boolean allMin = enchants.entrySet().stream().filter(e -> e.getKey() == e)
-                                                             .allMatch(e -> e.getIntValue() <= 1);
-                if (allMin) { // All enchantment are with min level is 1
-                    player(player, "All enchantments are already at level 1!", aqua);
-                    return InteractionResultHolder.fail(changerStack);
-                }
-            }
+//            if (amount < 0) { // Check enchantment levels
+//                boolean allMin = enchants.entrySet().stream().allMatch(e -> e.getIntValue() <= 1);
+//                if (allMin) { // All enchantment are with min level is 1
+//                    player(player, "All enchantments are already at level 1!", aqua);
+//                    return InteractionResultHolder.fail(changerStack);
+//                }
+//            }
             // Create new map with increased levels and store original enchantment and level
             Map<Holder<Enchantment>, Integer> upgraded = new HashMap<>();
             for (Map.Entry<Holder<Enchantment>, Integer> entry : enchants.entrySet()) {
                 Holder<Enchantment> enchant = entry.getKey(); // Get enchantment
-                int newLevel = entry.getValue() + amount; // Get enchantment level and amount
-                upgraded.put(enchant, newLevel);
+                int newLevel;
+                if (amount == -1) {
+                    newLevel = entry.getValue() + amount;
+                    upgraded.put(enchant, newLevel);
+                }
+                else if (amount == 1) {
+                    newLevel = Math.max(1, entry.getValue() + amount); // Get enchantment level and amount
+                    upgraded.put(enchant, newLevel);
+                }
             }
             // Apply the updated enchantments to the original item
             ItemStack newLevel = targetStack.copy();
-            upgraded.forEach((ench, lvl) -> {
-                if (lvl > 0) { newLevel.enchant(ench, lvl); }
-            });
+            upgraded.forEach(newLevel::enchant);
             ItemEnchantments newEnchantment = newLevel.getEnchantments();
-            if (targetStack.getItem() instanceof EnchantedBookItem) { // Enchanted books
-                ItemStack newBook = new ItemStack(Items.ENCHANTED_BOOK);
-                for (Map.Entry<Holder<Enchantment>, Integer> entry : newEnchantment.entrySet()) {
-                    Holder<Enchantment> enchant = entry.getKey(); // Get enchantment
-                    int enchLvl = entry.getValue(); // Get enchantment level and amount
-                    newBook.enchant(enchant, enchLvl);
-                }
-                player.setItemInHand(InteractionHand.OFF_HAND, newBook);
-            }
-            else { EnchantmentHelper.setEnchantments(targetStack, newEnchantment); } // Armor and tools
+            EnchantmentHelper.setEnchantments(targetStack, newEnchantment);
             itemHurt(player, changerStack);
             changerStack.shrink(1); // Consumes Level Charger
             return InteractionResultHolder.success(changerStack);
