@@ -34,8 +34,9 @@ public class LevelChargerItem extends Item {
         ItemStack changerStack = player.getItemInHand(hand),
                    targetStack = player.getItemInHand(otherHand);
         if (!player.level().isClientSide() && changerStack.is(ModTags.Items.LEVEL_CHARGER_GENERAL)) {
-            ItemEnchantments enchants = targetStack.getEnchantments(); // Get all enchantments and enchantment levels
-            if (enchants.isEmpty()) {
+            // Get all enchantments and enchantment levels
+            ItemEnchantments test = EnchantmentHelper.getEnchantmentsForCrafting(targetStack);
+            if (test.isEmpty()) {
                 player(player, "The item has no enchantments!", darkRed);
                 return InteractionResultHolder.fail(changerStack);
             }
@@ -48,23 +49,13 @@ public class LevelChargerItem extends Item {
 //            }
             // Create new map with increased levels and store original enchantment and level
             Map<Holder<Enchantment>, Integer> upgraded = new HashMap<>();
-            for (Map.Entry<Holder<Enchantment>, Integer> entry : enchants.entrySet()) {
+            for (Map.Entry<Holder<Enchantment>, Integer> entry : test.entrySet()) {
                 Holder<Enchantment> enchant = entry.getKey(); // Get enchantment
-                int newLevel;
-                if (amount == -1) {
-                    newLevel = entry.getValue() + amount;
-                    upgraded.put(enchant, newLevel);
-                }
-                else if (amount == 1) {
-                    newLevel = Math.max(1, entry.getValue() + amount); // Get enchantment level and amount
-                    upgraded.put(enchant, newLevel);
-                }
+                int newLevel = Math.max(1, entry.getValue() + amount); // Get enchantment level and amount
+                upgraded.put(enchant, newLevel);
             }
             // Apply the updated enchantments to the original item
-            ItemStack newLevel = targetStack.copy();
-            upgraded.forEach(newLevel::enchant);
-            ItemEnchantments newEnchantment = newLevel.getEnchantments();
-            EnchantmentHelper.setEnchantments(targetStack, newEnchantment);
+            upgraded.forEach(targetStack::enchant);
             itemHurt(player, changerStack);
             changerStack.shrink(1); // Consumes Level Charger
             return InteractionResultHolder.success(changerStack);
