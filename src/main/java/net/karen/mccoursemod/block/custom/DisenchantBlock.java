@@ -2,7 +2,6 @@ package net.karen.mccoursemod.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -122,9 +121,8 @@ public class DisenchantBlock extends Block {
 
     // CUSTOM METHOD - Enchanted item transform on Base item
     public static void enchant(Level level, BlockPos pos, ItemStack item) {
-        ItemStack baseItem = item.copy(); // Remove enchantments of original item - Drop the base item WITHOUT enchantments
-        baseItem.remove(DataComponents.ENCHANTMENTS); // Clean up tag if empty
-        baseItem.remove(DataComponents.STORED_ENCHANTMENTS);
+        // Remove enchantments of original item - Drop the base item WITHOUT enchantments
+        ItemStack baseItem = new ItemStack(item.getItem());
         dropEnchanted(level, pos, baseItem); // Drop base item WITHOUT enchantment
     }
 }
