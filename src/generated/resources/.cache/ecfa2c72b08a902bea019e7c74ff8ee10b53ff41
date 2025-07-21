@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-20T22:14:59.5239692	Block States: mccoursemod
+// 1.21.1	2025-07-20T22:54:29.0543999	Block States: mccoursemod
 f7a9ed05e4c0a1202e8bcf365202ba7cb2be62ac assets/mccoursemod/blockstates/alexandrite_block.json
 0cafbe7ae27ac97223742c164d1ec7781a244c03 assets/mccoursemod/blockstates/alexandrite_button.json
 291e000454687c4991c3e826145a1d360567203c assets/mccoursemod/blockstates/alexandrite_deepslate_ore.json
@@ -15,6 +15,7 @@ c3de16a84554d9b28f7c0a40223c98f184284417 assets/mccoursemod/blockstates/alexandr
 6e954ac549e2c5cbcca4aa7893c4dc1295232f22 assets/mccoursemod/blockstates/alexandrite_trapdoor.json
 fff21312cc3ff051bcbfd3196aa1ae539bac9d73 assets/mccoursemod/blockstates/alexandrite_wall.json
 8e8d469da6509de24f13ed0d1d6d618f4487f786 assets/mccoursemod/blockstates/disenchant.json
+159f4b050a7c6570ee1d9417d621862277c6d56d assets/mccoursemod/blockstates/enchant.json
 82d492e2ed177166a162d9797f6366a2ffbbd4d2 assets/mccoursemod/blockstates/growth_chamber.json
 7ada7b1a86cd071aaeab9476e6fb90a425578608 assets/mccoursemod/blockstates/honey_berry_bush.json
 b798e3f98a14cb82b5f13c7ee19986f914339bc5 assets/mccoursemod/blockstates/kohlrabi_crop.json
@@ -65,6 +66,7 @@ c045f1f88a95807a81039837c1b452ead22f27bd assets/mccoursemod/models/block/alexand
 58d7930dfdfe0f1b26baae156bb37121615de63f assets/mccoursemod/models/block/alexandrite_wall_side.json
 38ed9ccf062775a11d895f06907c6eb2bd8590ab assets/mccoursemod/models/block/alexandrite_wall_side_tall.json
 ddfddfe72420335985f1082dd564ddbd16c0e727 assets/mccoursemod/models/block/disenchant.json
+45de311c2f1e0dc3a34333c1ec4f0ca80a70e5dd assets/mccoursemod/models/block/enchant.json
 fde30d0d4c47eeba4ea51e17e009ec3f25e5361e assets/mccoursemod/models/block/growth_chamber.json
 78cb8629c38bf1d6b9ede0a2f8ce718058b65e01 assets/mccoursemod/models/block/honey_berry_bush_stage0.json
 fb47724ef71161134e163a38db1fb37b3114ace4 assets/mccoursemod/models/block/honey_berry_bush_stage1.json
@@ -102,6 +104,7 @@ f3ae6e9a3933cf190b3f1a9618d30b81cd8377ff assets/mccoursemod/models/item/alexandr
 db664caae0cb1ba469812550726b45659f050f5b assets/mccoursemod/models/item/alexandrite_stairs.json
 061c5070eacca88f9b1c519ed0f2089a78d70a7a assets/mccoursemod/models/item/alexandrite_trapdoor.json
 7d83855f1adb7b157d6f65bacfcc0714f91e3ae2 assets/mccoursemod/models/item/disenchant.json
+d658caf6cf956287963324b0f7b0924a37c2914c assets/mccoursemod/models/item/enchant.json
 4494db5eaae75a66b4dbfb4a93e373b564846838 assets/mccoursemod/models/item/growth_chamber.json
 71fe9e076ccc1d975fcf0a546427965633200cc7 assets/mccoursemod/models/item/magic_block.json
 878e4be2eeae91d7500344fbbe0d44895aa6502f assets/mccoursemod/models/item/raw_alexandrite_block.json

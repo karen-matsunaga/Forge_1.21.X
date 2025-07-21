@@ -112,6 +112,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         block(ModBlocks.PEDESTAL);
         blockWithItem(ModBlocks.GROWTH_CHAMBER);
         blockWithItem(ModBlocks.DISENCHANT);
+        blockWithItem(ModBlocks.ENCHANT);
     }
 
     // CUSTOM METHOD

@@ -184,11 +184,17 @@ public class ModBlocks {
     public static final RegistryObject<Block> GROWTH_CHAMBER = registerBlock("growth_chamber",
             () -> new GrowthChamberBlock(BlockBehaviour.Properties.of()));
 
-    // CUSTOM Enchant block
+    // CUSTOM Disenchant block
     public static final RegistryObject<Block> DISENCHANT = registerBlock("disenchant",
             () -> new DisenchantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)
                                                             .strength(5F)
                                                             .explosionResistance(3600000.0F), 1));
+
+    // CUSTOM Enchant block
+    public static final RegistryObject<Block> ENCHANT = registerBlock("enchant",
+            () -> new EnchantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)
+                                                            .strength(5F)
+                                                            .explosionResistance(3600000.0F)));
 
     // CUSTOM METHOD - Registry all custom blocks
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

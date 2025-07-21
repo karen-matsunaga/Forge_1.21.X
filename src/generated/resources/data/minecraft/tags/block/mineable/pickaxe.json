@@ -17,6 +17,7 @@
     "mccoursemod:alexandrite_stairs",
     "mccoursemod:alexandrite_trapdoor",
     "mccoursemod:alexandrite_wall",
-    "mccoursemod:disenchant"
+    "mccoursemod:disenchant",
+    "mccoursemod:enchant"
   ]
 }

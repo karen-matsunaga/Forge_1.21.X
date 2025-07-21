@@ -145,6 +145,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         // Custom Enchant block
         this.dropSelf(ModBlocks.DISENCHANT.get());
+        this.dropSelf(ModBlocks.ENCHANT.get());
     }
 
     // CUSTOM METHOD - Custom ore loot table
