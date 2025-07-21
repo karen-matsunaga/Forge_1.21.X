@@ -35,28 +35,34 @@ public class LevelChargerItem extends Item {
                    targetStack = player.getItemInHand(otherHand);
         if (!player.level().isClientSide() && changerStack.is(ModTags.Items.LEVEL_CHARGER_GENERAL)) {
             // Get all enchantments and enchantment levels
-            ItemEnchantments test = EnchantmentHelper.getEnchantmentsForCrafting(targetStack);
-            if (test.isEmpty()) {
+            ItemEnchantments allEnch = EnchantmentHelper.getEnchantmentsForCrafting(targetStack);
+            if (allEnch.isEmpty()) {
                 player(player, "The item has no enchantments!", darkRed);
                 return InteractionResultHolder.fail(changerStack);
             }
-//            if (amount < 0) { // Check enchantment levels
-//                boolean allMin = enchants.entrySet().stream().allMatch(e -> e.getIntValue() <= 1);
-//                if (allMin) { // All enchantment are with min level is 1
-//                    player(player, "All enchantments are already at level 1!", aqua);
-//                    return InteractionResultHolder.fail(changerStack);
-//                }
-//            }
+            if (amount < 0) { // Check enchantment levels
+                boolean allMin = allEnch.entrySet().stream().allMatch(e -> e.getIntValue() <= 1);
+                if (allMin) { // All enchantment are with min level is 1
+                    player(player, "All enchantments are already at level 1!", aqua);
+                    return InteractionResultHolder.fail(changerStack);
+                }
+            }
             // Create new map with increased levels and store original enchantment and level
             Map<Holder<Enchantment>, Integer> upgraded = new HashMap<>();
-            for (Map.Entry<Holder<Enchantment>, Integer> entry : test.entrySet()) {
+            for (Map.Entry<Holder<Enchantment>, Integer> entry : allEnch.entrySet()) {
                 Holder<Enchantment> enchant = entry.getKey(); // Get enchantment
-                int newLevel = Math.max(1, entry.getValue() + amount); // Get enchantment level and amount
-                upgraded.put(enchant, newLevel);
+                int newLevel = Math.max(1, entry.getValue() + amount); // Get enchantment level
+                upgraded.put(enchant, newLevel); // Store new enchantment and new enchantment level
             }
             // Apply the updated enchantments to the original item
-            upgraded.forEach(targetStack::enchant);
-            itemHurt(player, changerStack);
+            ItemEnchantments.Mutable enchantments = new ItemEnchantments.Mutable(allEnch);
+            for (Map.Entry<Holder<Enchantment>, Integer> entry : upgraded.entrySet()) {
+                Holder<Enchantment> key = entry.getKey(); // Set enchantment
+                Integer lvl = entry.getValue(); // Set enchantment level
+                enchantments.set(key, lvl); // Store new enchantment level
+            }
+            EnchantmentHelper.setEnchantments(targetStack, enchantments.toImmutable()); // New enchantment level
+            itemHurt(player, changerStack); // Message on screen
             changerStack.shrink(1); // Consumes Level Charger
             return InteractionResultHolder.success(changerStack);
         }
@@ -67,11 +73,12 @@ public class LevelChargerItem extends Item {
     @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
                                 @NotNull List<Component> list, @NotNull TooltipFlag flag) {
+        String name = stack.getDescriptionId().replace("item.mccoursemod.", "");
         if (stack.is(ModItems.LEVEL_CHARGER_PLUS.get())) {
-            tooltipLine(list, " increase +" + amount + " level.", green);
+            tooltipLine(list, itemLines(splitWord(name)) + " increase +" + amount + " level.", green);
         }
         else if (stack.is(ModItems.LEVEL_CHARGER_MINUS.get())) {
-            tooltipLine(list, " decrease " + amount + " level.", red);
+            tooltipLine(list, itemLines(splitWord(name)) + " decrease " + amount + " level.", red);
         }
         super.appendHoverText(stack, context, list, flag);
     }
