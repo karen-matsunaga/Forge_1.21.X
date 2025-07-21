@@ -411,4 +411,25 @@ public class Util {
             if (integer > 0) { stack.enchant(ench, integer); }});
         dropEnchanted(level, pos, stack);
     }
+
+    // CUSTOM METHOD - Grouped Enchantment
+    public static void groupedEnch(Map<Holder<Enchantment>, Integer> enchantments,
+                                   Level level, BlockPos pos) {
+        ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+        enchantments.forEach((ench, lvl) -> {
+            if (lvl > 0) { book.enchant(ench, lvl); }
+        });
+        dropEnchanted(level, pos, book); // Drop grouped enchanted book WITH enchantment
+    }
+
+    // CUSTOM METHOD - INDIVIDUAL enchanted book
+    public static void individualEnch(Map<Holder<Enchantment>, Integer> enchantments,
+                                      Level level, BlockPos pos) {
+        enchantments.forEach((enc, lvl) -> {
+            if (lvl > 0) {
+                ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(enc, lvl));
+                dropEnchanted(level, pos, book);
+            }
+        });
+    }
 }

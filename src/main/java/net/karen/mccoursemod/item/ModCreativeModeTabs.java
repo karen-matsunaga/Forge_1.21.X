@@ -133,6 +133,9 @@ public class ModCreativeModeTabs {
                         // Custom block entity
                         output.accept(ModBlocks.PEDESTAL.get());
                         output.accept(ModBlocks.GROWTH_CHAMBER.get());
+
+                        // Custom Enchant block
+                        output.accept(ModBlocks.DISENCHANT.get());
                     }).build());
 
     // CUSTOM METHOD - Registry all blocks and items on event

@@ -142,6 +142,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         // Custom crafting block entity
         this.dropSelf(ModBlocks.GROWTH_CHAMBER.get());
+
+        // Custom Enchant block
+        this.dropSelf(ModBlocks.DISENCHANT.get());
     }
 
     // CUSTOM METHOD - Custom ore loot table

@@ -44,6 +44,7 @@ public class ModLanguageProvider extends LanguageProvider {
         addBlock(ModBlocks.WALNUT_SAPLING, "Walnut Sapling");
         addBlock(ModBlocks.ALEXANDRITE_END_ORE, "Alexandrite End Ore");
         addBlock(ModBlocks.ALEXANDRITE_NETHER_ORE, "Alexandrite Nether Ore");
+        addBlock(ModBlocks.DISENCHANT, "Disenchant");
 
         // CUSTOM Items
         addItem(ModItems.ALEXANDRITE, "Alexandrite Gem");

@@ -33,7 +33,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                                                  ModBlocks.ALEXANDRITE_FENCE.get(), ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
                                                  ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get(), ModBlocks.ALEXANDRITE_SLAB.get(),
                                                  ModBlocks.ALEXANDRITE_STAIRS.get(), ModBlocks.ALEXANDRITE_TRAPDOOR.get(),
-                                                 ModBlocks.ALEXANDRITE_WALL.get());
+                                                 ModBlocks.ALEXANDRITE_WALL.get(), ModBlocks.DISENCHANT.get());
 
         // Break with Iron
         tag(BlockTags.NEEDS_IRON_TOOL).add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
